@@ -8,4 +8,5 @@ node_modules/
 .github/
 .venv
 .DS_Store
+.vscode
 cloudinary_python.txt
