@@ -1,4 +1,3 @@
-![RecipeMe Logo](documentation/recipeme-logo.png)
 
 **Table of contents:**
 
