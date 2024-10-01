@@ -6,4 +6,6 @@ __pycache__/
 *.py[cod]
 node_modules/
 .github/
+.venv
+.DS_Store
 cloudinary_python.txt
