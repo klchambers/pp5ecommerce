@@ -6,7 +6,7 @@
 - [User Experience](#user-experience)
   - [Design](#design)
   - [Workflow Logic Charts](#workflow-logic-charts)
-  - [User Goals](#user-goals)
+  - [Wireframes](#wireframes)
 - [User Stories](#user-stories)
 - [Features](#features)
   - [Data Model](#data-model)
@@ -55,11 +55,25 @@ The program has been deployed to Heroku and can be accessed [here]().
 
 
 
-<a id=user-goals></a>
+<a id="wireframes"></a>
 
-### User Goals
+### Wireframes
 
+Wireframes were developed at the outset of the project to visualize the site's layout and prioritise mobile-first design. These wireframes ensured that content would be accessible and optimized across all screen sizes, providing a seamless experience for visitors on any device.
 
+Each wireframe link presents mock-ups for the corresponding pages, showcasing their appearance on desktop, tablet, and mobile devices.
+
+<a href='/documentation/wireframes/HomepageWireframes.pdf'>Homepage Wireframes</a>
+
+<a href='/documentation/wireframes/ProductPageWireframes.pdf'>Product Page Wireframes</a>
+
+<a href='/documentation/wireframes/ProductInfoWireframes.pdf'>Product Info Page Wireframes</a>
+
+<a href='/documentation/wireframes/ShoppingCartWireframes.pdf'>Shopping Cart Wireframes</a>
+
+<a href='/documentation/wireframes/CheckoutWireframes.pdf'>Checkout Page Wireframes</a>
+
+<a href='/documentation/wireframes/ProfilePageWireframes.pdf'>User Profile Page Wireframes</a>
 
 <a id=user-stories></a>
 
