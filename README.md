@@ -8,6 +8,8 @@
   - [Workflow Logic Charts](#workflow-logic-charts)
   - [Wireframes](#wireframes)
 - [User Stories](#user-stories)
+  - [Visitor and Customer User Stories](#visitor-and-customer-user-stories)
+  - [Site Admin User Stories](#site-admin-user-stories)
 - [Features](#features)
   - [Data Model](#data-model)
   - [Further Development and Future Features](#further-development-and-future-features)
@@ -81,21 +83,25 @@ Each wireframe link presents mock-ups for the corresponding pages, showcasing th
 
 A GitHub Projects kanban board tracking progress of the following User Stories can be found [here](https://github.com/users/klchambers/projects/3).
 
-### 1: As a visitor I would like to view a list of products available for purchase
+<a id=visitor-and-customer-user-stories></a>
+
+### Visitor/Customer User Stories
+
+1: As a visitor I would like to view a list of products available for purchase
 
 Acceptance Criteria:
 * I can view a list of all wines.
 * I can filter wines by categories (e.g., red, white, sparkling).
 * I can search for a specific wine by name or region.
 
-### 2: As a customer, I want to view detailed information about a specific wine so that I can make an informed purchasing decision.
+2: As a customer, I want to view detailed information about a specific wine so that I can make an informed purchasing decision.
 
 Acceptance Criteria:
 * I can view the name, categories, price, description, and origin of a wine.
 * I can view customer reviews and ratings for the wine.
 * I can view an image of the wine bottle.
 
-### 3: As a customer, I want to add wines to my shopping cart so that I can review and purchase them later.
+3: As a customer, I want to add wines to my shopping cart so that I can review and purchase them later.
 
 Acceptance Criteria:
 
@@ -104,7 +110,7 @@ Acceptance Criteria:
 * I can view my cart with all selected wines, their quantities, and the total price.
 * I can remove wines from my cart or change their quantities.
 
-### 4: As a customer, I want to create an account so that I can manage my orders and personal information.
+4: As a customer, I want to create an account so that I can manage my orders and personal information.
 
 Acceptance Criteria:
 
@@ -112,7 +118,7 @@ Acceptance Criteria:
 * I can log in and log out of my account.
 * I can recover my password if I forget it.
 
-### 5: As a customer, I want to save wines to my wishlist so that I can purchase them later.
+5: As a customer, I want to save wines to my wishlist so that I can purchase them later.
 
 Acceptance Criteria:
 
@@ -120,7 +126,7 @@ Acceptance Criteria:
 * I can view my wishlist and remove items if I change my mind.
 * I can move items from my wishlist to my shopping cart.
 
-### 6: As a customer, I want to checkout and complete my purchase so that I can receive my selected wines.
+6: As a customer, I want to checkout and complete my purchase so that I can receive my selected wines.
 
 Acceptance Criteria:
 
@@ -128,21 +134,21 @@ Acceptance Criteria:
 * I can enter my shipping address and billing information.
 * I can see a confirmation of my order, including an order number.
 
-### 7: As a customer, I want to receive an email confirmation of my order so that I have a record of my purchase.
+7: As a customer, I want to receive an email confirmation of my order so that I have a record of my purchase.
 
 Acceptance Criteria:
 
 * After completing the purchase, I receive an email with details about my order.
 * The email includes an order number, summary of items, shipping address, and estimated delivery time.
 
-### 8: As a customer, I want to track the status of my order so that I know when to expect delivery.
+8: As a customer, I want to track the status of my order so that I know when to expect delivery.
 
 Acceptance Criteria:
 
 * I can view my order status (e.g., pending, shipped, delivered) in my account.
 * I receive notifications or emails when the status of my order changes.
 
-### 9: As a customer, I want to leave a review for a wine I purchased so that I can share my experience with other customers.
+9: As a customer, I want to leave a review for a wine I purchased so that I can share my experience with other customers.
 
 Acceptance Criteria:
 
@@ -150,23 +156,26 @@ Acceptance Criteria:
 * I can write a review with my comments and feedback.
 * My review is visible to other customers after submission.
 
-### 10: As a customer, I want to manage my account details so that I can update my personal information.
+10: As a customer, I want to manage my account details so that I can update my personal information.
 
 Acceptance Criteria:
 
 * I can update my email, password, shipping address, and billing information.
 * I can view my order history and see the status of each order.
 
-### 11: As an admin, I want to manage the wine inventory so that I can keep the product catalog updated.
+<a id=site-admin-user-stories></a>
+
+### Site Admin User Stories
+
+11: As an admin, I want to manage the wine inventory so that I can keep the product catalog updated.
 
 Acceptance Criteria:
 
 * I can add, edit, or delete wines from the product catalog.
-* I can update the stock levels of each wine.
 * I can upload or change images for wines.
 * I can manage categories and regions for filtering.
 
-### 12: As an admin, I want to view customer orders so that I can process and update their status.
+12: As an admin, I want to view customer orders so that I can process and update their status.
 
 Acceptance Criteria:
 
@@ -174,7 +183,7 @@ Acceptance Criteria:
 * I can update the status of an order (e.g., shipped, delivered).
 * I can search for orders by customer name or order number.
 
-### 12: As an admin, I want to view customer reviews so that I can moderate or delete inappropriate content.
+13: As an admin, I want to view customer reviews so that I can moderate or delete inappropriate content.
 
 Acceptance Criteria:
 
@@ -349,6 +358,7 @@ Follow the instructions in your terminal to create your superuser account userna
 * [**Django**](https://www.djangoproject.com): Python framework for templating, URL routing, admin interface, and more
 * [**Visual Studio Code**](https://code.visualstudio.com/): Text editor for development
 * [**Heroku**](https://www.heroku.com): Live deployment of web app
+* [**Balsamiq**](https://balsamiq.com/wireframes/): Wireframing tool used to create UI mock-ups at project outset
 
 <a id=acknowledgements></a>
 
