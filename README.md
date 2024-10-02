@@ -57,7 +57,7 @@ The program has been deployed to Heroku and can be accessed [here]().
 
 This Entity-Relationship Diagram (ERD) provides a visual representation of the key models and relationships between them in the system. Below this diagram is breakdown of these entities and their relationships.
 
-![Entity Relationship Diagram](documentation/PP5_ERD.pdf)
+![Entity Relationship Diagram](documentation/PP5_ERD.png)
 
 **Main Entities and Relationships**
 
