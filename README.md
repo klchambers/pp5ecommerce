@@ -5,7 +5,7 @@
 - [Deployed Site](#deployed-site)
 - [User Experience](#user-experience)
   - [Design](#design)
-  - [Workflow Logic Charts](#workflow-logic-charts)
+  - [Entity Relationship Diagram](#entity-relationship-diagram)
   - [Wireframes](#wireframes)
 - [User Stories](#user-stories)
   - [Visitor and Customer User Stories](#visitor-and-customer-user-stories)
@@ -51,11 +51,69 @@ The program has been deployed to Heroku and can be accessed [here]().
 
 
 
-<a id="workflow-logic-charts"></a>
+<a id="entity-relationship-diagram"></a>
 
-### Workflow Logic Chart
+### Entity Relationship Diagram
 
+This Entity-Relationship Diagram (ERD) provides a visual representation of the key models and relationships between them in the system. Below this diagram is breakdown of these entities and their relationships.
 
+![Entity Relationship Diagram](documentation/PP5_ERD.pdf)
+
+**Main Entities and Relationships**
+
+User:
+1. Represents the system's registered users.
+1. Each user has one associated UserProfile.
+1. Users can place multiple Orders.
+
+UserProfile:
+1. Extends the default User model with additional fields for storing delivery information and order history.
+1. Maintains default delivery information like phone number, address, city, and country.
+1. One-to-One relationship with the User model, meaning each user has exactly one profile, and each profile belongs to one user.
+
+Product:
+1. Represents individual products available for purchase.
+1. Products are referenced in OrderLineItems when included in an order.
+
+Order:
+1. Stores details about an order placed by a user.
+1. Includes delivery information such as the full name, phone number, address, and country.
+1. Contains details like the total cost of the order and delivery charges.
+1. One-to-Many relationship with OrderLineItem, meaning each order can contain multiple products (line items).
+
+OrderLineItem:
+1. Represents a specific product within an order.
+1. Each OrderLineItem belongs to one Order.
+1. Contains details about the product, quantity, and the total cost for that item.
+
+Region:
+1. Represents geographical wine-producing regions, such as Bordeaux or Napa Valley.
+1. One-to-Many relationship with the Wine model, where a region can produce multiple wines.
+
+Wine:
+1. Represents individual wines available for purchase.
+1. Linked to Region via a ForeignKey, meaning each wine is produced in one region.
+1. Linked to Category via a ManyToManyField, meaning each wine can belong to multiple categories (e.g., Red, Sparkling).
+
+Category:
+1. Represents the different types of wine categories, such as Red, White, or Sparkling.
+1. Many-to-Many relationship with Wine, meaning a wine can belong to multiple categories, and a category can have multiple wines.
+
+**Relationships Summary**
+
+* User: One-to-One with UserProfile.
+
+* UserProfile: One-to-One with User.
+
+* Order: Many-to-One with UserProfile, and One-to-Many with OrderLineItem.
+
+* OrderLineItem: Many-to-One with Order, and Many-to-One with Product.
+
+* Wine: Many-to-One with Region, and Many-to-Many with Category.
+
+* Region: One-to-Many with Wine.
+
+* Category: Many-to-Many with Wine.
 
 <a id="wireframes"></a>
 
