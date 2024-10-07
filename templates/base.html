@@ -54,59 +54,71 @@
         <!-- Toggler Button for Mobile View -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon "></span>
         </button>
-    
+
         <!-- Navbar Content -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Left-aligned Items (Search Bar) -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+          <!-- Search Bar -->
           <form class="d-flex me-auto my-2 my-lg-0" method="GET" action="">
-            <input class="form-control me-2" type="search" name="q" placeholder="Search..." aria-label="Search" style="max-width: 200px;">
+            <input class="form-control me-2" type="search" name="q" placeholder="Search..." aria-label="Search"
+              style="max-width: 200px;">
             <button class="btn btn-outline-secondary" type="submit">
               <i class="fas fa-search"></i>
             </button>
           </form>
-    
+
           <!-- Right-aligned Items -->
           <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+
             <!-- Shop Button -->
-            <li class="nav-item">
-              <a class="nav-link text-center" href="#">
-                <i class="fas fa-lg fa-wine-bottle d-none d-md-block"></i>
+            <li class="nav-item dropdown">
+              <a class="nav-link text-center text-secondary pt-4 pb-0" href="#" id="shop-options" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-wine-bottle fa-lg d-none d-md-block"></i>
                 <p class="pt-2">Shop</p>
               </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="shop-options">
+                <li><a class="dropdown-item" href="#">View all products</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">View styles</a></li>
+                <li><a class="dropdown-item" href="#">View regions</a></li>
+                <li><a class="dropdown-item" href="#">View grape varieties</a></li>
+              </ul>
             </li>
-    
+
             <!-- Account Dropdown -->
             <li class="nav-item dropdown">
-              <a class="nav-link text-center" href="#" id="user-options" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+              <a class="nav-link text-center text-secondary pt-4 pb-0" href="#" id="user-options" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-user fa-lg d-none d-md-block"></i>
                 <p class="pt-2">My Account</p>
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
-                  {% if request.user.is_superuser %}
-                  <li><a class="dropdown-item" href="#">Product Management</a></li>
-                  {% endif %}
-                  <li><a class="dropdown-item" href="#">My Profile</a></li>
-                  <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                {% if request.user.is_superuser %}
+                <li><a class="dropdown-item" href="#">Product Management</a></li>
+                {% endif %}
+                <li><a class="dropdown-item" href="#">My Profile</a></li>
+                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
-                  <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
-                  <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
                 {% endif %}
               </ul>
             </li>
-    
+
             <!-- Shopping Bag -->
             <li class="nav-item">
-              <a class="nav-link text-center {% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %}" href="#">
+              <a class="nav-link pt-4 pb-0 text-center {% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %}"
+                href="#">
                 <i class="fas fa-shopping-bag fa-lg d-none d-md-block"></i>
                 <p class="pt-2">
                   {% if grand_total %}
-                    ${{ grand_total|floatformat:2 }}
+                  ${{ grand_total|floatformat:2 }}
                   {% else %}
-                    $0.00
+                  $0.00
                   {% endif %}
                 </p>
               </a>
@@ -115,7 +127,7 @@
         </div>
       </div>
     </nav>
-    
+
 
   </header>
 

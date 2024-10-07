@@ -15,6 +15,7 @@ body {
     background: url('/media/homepage_img.jpg') no-repeat center center fixed;
     background-size: cover;
     box-sizing: border-box;
+    overflow-y: hidden;
 }
 
 /* Ensure the header has the right height and is fixed at the top */
@@ -33,6 +34,12 @@ body {
     width: 100%;
     height: auto;
 }
+  
+.navbar-toggler-icon {
+    width: 50px; /* Width of the hamburger icon */
+    height: 50px; /* Height of the hamburger icon */
+    background-size: 50px 50px; /* Ensure the background size matches the icon dimensions */
+}  
 
 /* Adjust container behavior for larger screens */
 @media (min-width: 1200px) {
@@ -40,3 +47,10 @@ body {
         max-width: 80%;
     }
 }
+@media (max-width: 768px) {
+    .navbar .btn-group {
+      display: flex;
+      justify-content: center;
+      width: 100%; /* Make sure the button group takes full width */
+    }
+  }

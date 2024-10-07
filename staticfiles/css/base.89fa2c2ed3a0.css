@@ -47,10 +47,17 @@ body {
         max-width: 80%;
     }
 }
+
 @media (max-width: 768px) {
-    .navbar .btn-group {
-      display: flex;
-      justify-content: center;
-      width: 100%; /* Make sure the button group takes full width */
+    /* Adjust size for the "Shop" button */
+    .navbar .btn-group .btn {
+      padding: 8px 12px; /* Reduce padding */
+      font-size: 14px; /* Decrease font size */
+    }
+  
+    /* Optional: Adjust dropdown menu size if needed */
+    .navbar .dropdown-menu {
+      font-size: 14px; /* Decrease font size of dropdown items */
+      padding: 8px; /* Reduce padding */
     }
   }

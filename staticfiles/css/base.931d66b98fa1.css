@@ -41,16 +41,20 @@ body {
     background-size: 50px 50px; /* Ensure the background size matches the icon dimensions */
 }  
 
+/* Change the color of the dropdown arrow (caret) */
+.btn-outline-secondary.dropdown-toggle::after {
+    color: #343a40; /* Set this to a darker color (use any color of your choice) */
+  }
+  
+/* Keep the outline secondary */
+.btn-outline-secondary {
+border-color: #6c757d;
+color: #6c757d;
+}
+
 /* Adjust container behavior for larger screens */
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;
     }
 }
-@media (max-width: 768px) {
-    .navbar .btn-group {
-      display: flex;
-      justify-content: center;
-      width: 100%; /* Make sure the button group takes full width */
-    }
-  }
