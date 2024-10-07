@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY') # noqa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['http://127.0.0.1:8000/', 'localhost', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1:8000/', 'localhost', '.herokuapp.com']
 
 
 # Application definition
@@ -152,11 +152,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
