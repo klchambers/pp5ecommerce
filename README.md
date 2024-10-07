@@ -1,4 +1,4 @@
-
+![GlouGlou Wine Store Logo](static/logos/logo5.png)
 **Table of contents:**
 
 - [Introduction](#introduction)
@@ -34,7 +34,7 @@
 
 ## Deployed Site
 
-The program has been deployed to Heroku and can be accessed [here]().
+The program has been deployed to Heroku and can be accessed [here](https://pp5ecommerce-a72d5065ca06.herokuapp.com/).
 
 <a id=user-experience></a>
 
