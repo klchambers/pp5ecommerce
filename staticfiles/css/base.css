@@ -1,0 +1,46 @@
+html , body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background: url('/media/homepage_img.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 150px; /* Push the content down to accommodate the fixed header */
+    box-sizing: border-box; /* Include padding in height calculation */
+    min-height: calc(100vh - 150px); /* Adjust the body's minimum height to avoid overflowing */
+}
+
+.main-logo {
+    width: 150px;
+    height: auto;
+}
+
+.header-container {
+    height: 200px; /* Ensure the header has the right height */
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
+  
+  /* fixed top navbar only on medium and up */
+  @media (min-width: 992px) {
+      .fixed-top-desktop-only {
+          position: fixed;
+          top: 0;
+          right: 0;
+          left: 0;
+          z-index: 1030;
+      }
+  
+      .header-container {
+          padding-top: 164px;
+      }
+  }
