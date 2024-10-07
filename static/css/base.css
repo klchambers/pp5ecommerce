@@ -1,8 +1,13 @@
+/* Importing typefaces from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     overflow-x: hidden; /* Prevents horizontal scroll */
+    font-family: 'Rubik', Helvetica, sans-serif;
 }
 
 body {
