@@ -27,6 +27,13 @@ body {
     background-color: #fff;
 }
 
+.navbar {
+    background-color: #fff !important;
+    z-index: 111;
+    width: 100%;
+    height: auto;
+}
+
 /* Adjust container behavior for larger screens */
 @media (min-width: 1200px) {
     .container {

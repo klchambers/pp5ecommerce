@@ -1,0 +1,35 @@
+/* Importing typefaces from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    font-family: 'Rubik', Helvetica, sans-serif;
+}
+
+body {
+    padding-top: 150px; /* Pushes the content down to leave space for the fixed header */
+    background: url('/media/homepage_img.jpg') no-repeat center center fixed;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+/* Ensure the header has the right height and is fixed at the top */
+.header-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    z-index: 100; /* Ensure the header stays on top */
+    background-color: #fff;
+}
+
+/* Adjust container behavior for larger screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
