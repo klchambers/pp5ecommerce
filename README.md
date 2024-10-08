@@ -1,4 +1,5 @@
 ![GlouGlou Wine Store Logo](static/logos/logo5.png)
+
 **Table of contents:**
 
 - [Introduction](#introduction)
@@ -417,6 +418,9 @@ Follow the instructions in your terminal to create your superuser account userna
 * [**Visual Studio Code**](https://code.visualstudio.com/): Text editor for development
 * [**Heroku**](https://www.heroku.com): Live deployment of web app
 * [**Balsamiq**](https://balsamiq.com/wireframes/): Wireframing tool used to create UI mock-ups at project outset
+* [**Django Summernote**](https://github.com/lqez/django-summernote): HTML text editor for text fields
+* [**Whitenoise**](https://whitenoise.readthedocs.io/en/stable/index.html): Static file serving
+* [**Pillow**](https://pillow.readthedocs.io/en/stable/): Image processing
 
 <a id=acknowledgements></a>
 
