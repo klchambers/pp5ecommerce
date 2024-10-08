@@ -9,9 +9,9 @@ class Wine(models.Model):
     slug = models.SlugField(max_length=254, unique=True)
     winemaker = models.CharField(max_length=254)
     description = models.TextField(blank=True)
-    category = models.ManyToManyField()
-    region = models.ForeignKey()
-    rating = models.DecimalField(max_digits=6, blank=True)
+    # category = models.ManyToManyField()
+    # region = models.ForeignKey()
+    rating = models.DecimalField(max_digits=6, blank=True, decimal_places=0)
     image = models.ImageField(blank=True)
 
     """
