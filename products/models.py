@@ -2,16 +2,45 @@ from django.db import models
 from django.utils.text import slugify
 
 
-# Create your models here.
+class Category(models.Model):
+    """
+    Category model designed to hold the style of wine
+    e.g. white, red, & sparkling.
+    """
+    name = models.CharField(max_length=100)
+    friendly_name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.friendly_name if self.friendly_name else self.name
+
+
+class Region(models.Model):
+    # name = region, e.g., "Beaujolais"
+    name = models.CharField(max_length=254)
+    # country stores country
+    country = models.CharField(max_length=254)
+
+    class Meta:
+        # preventing creation of duplicate regions
+        # allows same region in different countries
+        # e.g. Basque Country, Spain & Basque Country, France
+        unique_together = ('name', 'country')
+
+    def __str__(self):
+        return f"{self.name}, {self.country}"
+
+
 class Wine(models.Model):
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254)
     slug = models.SlugField(max_length=254, unique=True)
     winemaker = models.CharField(max_length=254)
     description = models.TextField(blank=True)
-    # category = models.ManyToManyField()
-    # region = models.ForeignKey()
-    rating = models.DecimalField(max_digits=6, blank=True, decimal_places=0)
+    # ManyToMany relationship with category model as one
+    # wine can have multiple styles and one style links to many wines
+    category = models.ManyToManyField(Category, related_name='wines')
+    region = models.ForeignKey(Region, on_delete=models.SET_NULL, null=True)
+    rating = models.DecimalField(max_digits=6, null=True, decimal_places=0)
     image = models.ImageField(blank=True)
 
     """
@@ -23,3 +52,6 @@ class Wine(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super(Wine, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.name}, by {self.winemaker}"
