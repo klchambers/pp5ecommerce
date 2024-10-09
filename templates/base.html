@@ -80,7 +80,7 @@
                 <p class="pt-2">Shop</p>
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="shop-options">
-                <li><a class="dropdown-item" href="#">View all products</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}">View all products</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">View styles</a></li>
                 <li><a class="dropdown-item" href="#">View regions</a></li>
@@ -116,9 +116,9 @@
                 <i class="fas fa-shopping-bag fa-lg d-none d-md-block"></i>
                 <p class="pt-2">
                   {% if grand_total %}
-                  ${{ grand_total|floatformat:2 }}
+                  €{{ grand_total|floatformat:2 }}
                   {% else %}
-                  $0.00
+                  €0.00
                   {% endif %}
                 </p>
               </a>
