@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Wine, Region, Category
+from .models import Wine, Region, Category, GrapeVariety
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -20,3 +20,4 @@ class WineAdmin(SummernoteModelAdmin):
 # Register your models here.
 admin.site.register(Category)
 admin.site.register(Region)
+admin.site.register(GrapeVariety)
