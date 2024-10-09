@@ -5,13 +5,11 @@
 - [Introduction](#introduction)
 - [Deployed Site](#deployed-site)
 - [User Experience](#user-experience)
-  - [Design](#design)
-  - [Entity Relationship Diagram](#entity-relationship-diagram)
   - [Wireframes](#wireframes)
-- [Epics and User Stories](#epics-and-user-stories)
-- [Features](#features)
+  - [Features](#features)
+  - [Design](#design)
   - [Data Model](#data-model)
-  - [Further Development and Future Features](#further-development-and-future-features)
+- [Epics and User Stories](#epics-and-user-stories)
 - [Testing and Validation](#testing-and-validation)
   - [W3C HTML and CSS Validation](#w3c-html-and-css-validation)
   - [JSHint Code Analysis](#jshint-code-analysis)
@@ -19,6 +17,7 @@
   - [Bugs and Challenges](#bugs-and-challenges)
   - [Development](#development)
   - [Contributing](#contributing)
+  - [Further Development and Future Features](#further-development-and-future-features)
   - [Deployment](#deployment)
 - [Technologies Used](#technologies-used)
 - [Acknowledgements](#acknowledgements)
@@ -39,81 +38,6 @@ The program has been deployed to Heroku and can be accessed [here](https://pp5ec
 
 ## User Experience
 
-<a id=design></a>
-
-### Design
-
-#### Colour
-
-
-#### Typography
-
-
-
-<a id="entity-relationship-diagram"></a>
-
-### Entity Relationship Diagram
-
-This Entity-Relationship Diagram (ERD) provides a visual representation of the key models and relationships between them in the system. Below this diagram is breakdown of these entities and their relationships.
-
-![Entity Relationship Diagram](documentation/PP5_ERD.png)
-
-**Main Entities and Relationships**
-
-User:
-1. Represents the system's registered users.
-1. Each user has one associated UserProfile.
-1. Users can place multiple Orders.
-
-UserProfile:
-1. Extends the default User model with additional fields for storing delivery information and order history.
-1. Maintains default delivery information like phone number, address, city, and country.
-1. One-to-One relationship with the User model, meaning each user has exactly one profile, and each profile belongs to one user.
-
-Product:
-1. Represents individual products available for purchase.
-1. Products are referenced in OrderLineItems when included in an order.
-
-Order:
-1. Stores details about an order placed by a user.
-1. Includes delivery information such as the full name, phone number, address, and country.
-1. Contains details like the total cost of the order and delivery charges.
-1. One-to-Many relationship with OrderLineItem, meaning each order can contain multiple products (line items).
-
-OrderLineItem:
-1. Represents a specific product within an order.
-1. Each OrderLineItem belongs to one Order.
-1. Contains details about the product, quantity, and the total cost for that item.
-
-Region:
-1. Represents geographical wine-producing regions, such as Bordeaux or Napa Valley.
-1. One-to-Many relationship with the Wine model, where a region can produce multiple wines.
-
-Wine:
-1. Represents individual wines available for purchase.
-1. Linked to Region via a ForeignKey, meaning each wine is produced in one region.
-1. Linked to Category via a ManyToManyField, meaning each wine can belong to multiple categories (e.g., Red, Sparkling).
-
-Category:
-1. Represents the different types of wine categories, such as Red, White, or Sparkling.
-1. Many-to-Many relationship with Wine, meaning a wine can belong to multiple categories, and a category can have multiple wines.
-
-**Relationships Summary**
-
-* User: One-to-One with UserProfile.
-
-* UserProfile: One-to-One with User.
-
-* Order: Many-to-One with UserProfile, and One-to-Many with OrderLineItem.
-
-* OrderLineItem: Many-to-One with Order, and Many-to-One with Product.
-
-* Wine: Many-to-One with Region, and Many-to-Many with Category.
-
-* Region: One-to-Many with Wine.
-
-* Category: Many-to-Many with Wine.
-
 <a id="wireframes"></a>
 
 ### Wireframes
@@ -133,6 +57,121 @@ Each wireframe link presents mock-ups for the corresponding pages, showcasing th
 <a href='/documentation/wireframes/CheckoutWireframes.pdf'>Checkout Page Wireframes</a>
 
 <a href='/documentation/wireframes/ProfilePageWireframes.pdf'>User Profile Page Wireframes</a>
+
+
+<a id=features></a>
+
+## Features
+
+#### Homepage
+
+#### Product Page
+
+#### Product Information
+
+#### Shopping Bag
+
+#### Checkout
+
+#### User Profile
+
+#### User Ratings
+
+#### Contact Us
+
+<hr>
+
+<a id=design></a>
+
+### Design
+
+#### Colour
+
+
+#### Typography
+
+
+
+<a id="data-model"></a>
+
+### Data Model
+
+This Entity-Relationship Diagram (ERD) provides a visual representation of the key models and relationships between them in the system. Below this diagram is breakdown of these entities and their relationships.
+
+![Entity Relationship Diagram](documentation/PP5_ERD.png)
+
+**Main Entities and Relationships**
+
+<details><summary>User</summary>
+
+1. Represents the system's registered users.
+1. Each user has one associated UserProfile.
+1. Users can place multiple Orders.
+</details>
+
+<details><summary>UserProfile</summary>
+
+1. Extends the default User model with additional fields for storing delivery information and order history.
+1. Maintains default delivery information like phone number, address, city, and country.
+1. One-to-One relationship with the User model, meaning each user has exactly one profile, and each profile belongs to one user.
+</details>
+
+<details><summary>Product</summary>
+
+1. Represents individual products available for purchase.
+1. Products are referenced in OrderLineItems when included in an order.
+</details>
+
+<details><summary>Order</summary>
+
+1. Stores details about an order placed by a user.
+1. Includes delivery information such as the full name, phone number, address, and country.
+1. Contains details like the total cost of the order and delivery charges.
+1. One-to-Many relationship with OrderLineItem, meaning each order can contain multiple products (line items).
+</details>
+
+<details><summary>OrderLineItem</summary>
+
+1. Represents a specific product within an order.
+1. Each OrderLineItem belongs to one Order.
+1. Contains details about the product, quantity, and the total cost for that item.
+</details>
+
+<details><summary>Region</summary>
+
+1. Represents geographical wine-producing regions, such as Alsace, France or Piedmont, Italy.
+1. One-to-Many relationship with the Wine model, where a region can produce multiple wines.
+</details>
+
+<details><summary>Wine</summary>
+
+1. Represents individual wines available for purchase.
+1. Linked to Region via a ForeignKey, meaning each wine is produced in one region.
+1. Linked to Category via a ManyToManyField, meaning each wine can belong to multiple categories (e.g., Red, Sparkling).
+</details>
+
+<details><summary>Category</summary>
+
+1. Represents the different types of wine categories, such as Red, White, or Sparkling.
+1. Many-to-Many relationship with Wine, meaning a wine can belong to multiple categories, and a category can have multiple wines.
+</details>
+<br>
+
+**Relationships Summary**
+
+* User: One-to-One with UserProfile.
+
+* UserProfile: One-to-One with User.
+
+* Order: Many-to-One with UserProfile, and One-to-Many with OrderLineItem.
+
+* OrderLineItem: Many-to-One with Order, and Many-to-One with Product.
+
+* Wine: Many-to-One with Region, and Many-to-Many with Category.
+
+* Region: One-to-Many with Wine.
+
+* Category: Many-to-Many with Wine.
 
 <a id=epics-and-user-stories></a>
 
@@ -197,6 +236,7 @@ As a customer, I want to save wines to my wishlist so that I can purchase them l
 <hr>
 
 **Epic 3:** *Customer Account Management*
+
 As a customer, I want to create and manage an account to save my preferences, manage orders, and update personal details.
 
 <details> <summary>User Story 4: Account Creation</summary>
@@ -220,6 +260,7 @@ As a customer, I want to manage my account details so that I can update my perso
 <hr>
 
 **Epic 4:** *Checkout and Order Management*
+
 As a customer, I want to complete purchases and track my orders so that I can receive my wines and stay informed on their delivery status.
 
 <details> <summary>User Story 6: Checkout/Stripe Integration</summary>
@@ -254,6 +295,7 @@ As a customer, I want to track the status of my order so that I know when to exp
 <hr>
 
 **Epic 5:** *Customer Reviews and Feedback*
+
 As a customer, I want to leave and view reviews and ratings for wines so that I can share my experience and help other customers make decisions.
 
 <details> <summary>User Story 9: Product Ratings/Reviews</summary>
@@ -285,6 +327,7 @@ As an admin, I want to manage the wine inventory so that I can keep the product 
 <hr>
 
 **Epic 7:** *Admin Order and Customer Review Management*
+
 As an admin, I want to manage customer orders and moderate reviews to ensure smooth order processing and maintain content quality.
 
 <details> <summary>User Story 12: View Customer Orders</summary>
@@ -306,22 +349,6 @@ As an admin, I want to view customer reviews so that I can moderate or delete in
 * I can delete reviews that violate the terms of service.
 * I can filter reviews by wine or customer.
 </details>
-
-<a id=features></a>
-
-## Features
-
-
-
-<a id=data-model></a>
-
-### Data Model
-
-
-<a id=further-development-and-future-features></a>
-
-### Further Development and Future Features
-
 
 
 <a id=testing-and-validation></a>
@@ -384,6 +411,13 @@ HTML validation of individual pages can be viewed in the drop down boxes below:
 ### Contributing
 
 To contribute, make a pull request from the [project repository](https://github.com/klchambers/pp5ecommerce). When merged, any changes will be reflected following the next Heroku deployment of the project.
+
+<a id=further-development-and-future-features></a>
+
+### Further Development and Future Features
+
+
+
 <a id=deployment></a>
 
 ### Deployment
