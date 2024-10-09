@@ -10,7 +10,11 @@ class WineAdmin(SummernoteModelAdmin):
     # Enable search on these fields
     search_fields = ('name', 'winemaker', 'region__name', 'category__name')
     # Filters in the sidebar
-    list_filter = ('region', 'category', 'rating')
+    list_filter = ('region',
+                   'category',
+                   'rating',
+                   'grape_varieties',
+                   'price')
     # Auto-populate slug field from name
     prepopulated_fields = {'slug': ('name',)}
     # Horizontal filter for the ManyToManyField 'category'

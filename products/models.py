@@ -35,7 +35,7 @@ class Region(models.Model):
 
 
 class GrapeVariety(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100, unique=True,)
 
     class Meta:
         verbose_name_plural = "grape varieties"
@@ -49,15 +49,23 @@ class Wine(models.Model):
     friendly_name = models.CharField(max_length=254)
     slug = models.SlugField(max_length=254, unique=True)
     winemaker = models.CharField(max_length=254)
+    price = models.DecimalField(
+                                max_digits=10,
+                                decimal_places=2,
+                                null=True,
+                                blank=True)
     description = models.TextField(blank=True)
     # ManyToMany relationship with category model as one
     # wine can have multiple styles and one style links to many wines
     category = models.ManyToManyField(Category, related_name='wines')
     region = models.ForeignKey(Region, on_delete=models.SET_NULL, null=True)
-    rating = models.DecimalField(max_digits=6, null=True, decimal_places=0)
+    rating = models.DecimalField(max_digits=6,
+                                 null=True,
+                                 blank=True,
+                                 decimal_places=0)
     image = models.ImageField(blank=True)
     grape_varieties = models.ManyToManyField(
-        GrapeVariety, related_name='wines')
+        GrapeVariety, related_name='wines', blank=True)
 
     """
     Automatically generate a slug from the title.
