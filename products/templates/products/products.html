@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <h1>Product List</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {% if products %}
+                    <ul>
+                        {% for product in products %}
+                            <li>
+                                <strong>{{ product.name }}</strong><br>
+                                Winemaker: {{ product.winemaker }}<br>
+                                Price: {{ product.price }}<br>
+                                Rating: {{ product.rating }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No products available at the moment.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
