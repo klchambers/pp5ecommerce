@@ -41,16 +41,26 @@ body {
     background-size: 50px 50px; /* Ensure the background size matches the icon dimensions */
 }  
 
+
+/* Media queries */
+@media (max-width: 768px) {
+     /* Make sure the navbar buttons take full width */
+    .navbar .btn-group {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+
+@media (min-width: 1025px) {
+    /* Navbars expand on hover on larger screens */
+    .dropdown:hover>.dropdown-menu {display: block;}
+}
+
 /* Adjust container behavior for larger screens */
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;
     }
 }
-@media (max-width: 768px) {
-    .navbar .btn-group {
-      display: flex;
-      justify-content: center;
-      width: 100%; /* Make sure the button group takes full width */
-    }
-  }
