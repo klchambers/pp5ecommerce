@@ -8,9 +8,7 @@
   - [Design](#design)
   - [Entity Relationship Diagram](#entity-relationship-diagram)
   - [Wireframes](#wireframes)
-- [User Stories](#user-stories)
-  - [Visitor and Customer User Stories](#visitor-and-customer-user-stories)
-  - [Site Admin User Stories](#site-admin-user-stories)
+- [Epics and User Stories](#epics-and-user-stories)
 - [Features](#features)
   - [Data Model](#data-model)
   - [Further Development and Future Features](#further-development-and-future-features)
@@ -136,119 +134,134 @@ Each wireframe link presents mock-ups for the corresponding pages, showcasing th
 
 <a href='/documentation/wireframes/ProfilePageWireframes.pdf'>User Profile Page Wireframes</a>
 
-<a id=user-stories></a>
+<a id=epics-and-user-stories></a>
 
-## User Stories
+## Epics and User Stories
 
 A GitHub Projects kanban board tracking progress of the following User Stories can be found [here](https://github.com/users/klchambers/projects/3).
 
-<a id=visitor-and-customer-user-stories></a>
 
-### Visitor/Customer User Stories
+**Epic 1:** *Product Browsing and Information*
 
-1: As a visitor I would like to view a list of products available for purchase
+As a visitor or customer, I want to explore and find wines that match my preferences so that I can make informed purchasing decisions.
 
-Acceptance Criteria:
-* I can view a list of all wines.
-* I can filter wines by categories (e.g., red, white, sparkling).
-* I can search for a specific wine by name or region.
+<details> <summary>User Story 1: Browsing Products</summary>
+As a visitor I would like to view a list of products available for purchase.
 
-2: As a customer, I want to view detailed information about a specific wine so that I can make an informed purchasing decision.
+I can view a list of all wines.
+I can filter wines by categories (e.g., red, white, sparkling).
+I can search for a specific wine by name or region.
 
-Acceptance Criteria:
-* I can view the name, categories, price, description, and origin of a wine.
-* I can view customer reviews and ratings for the wine.
-* I can view an image of the wine bottle.
+</details> <details> <summary>User Story 2: View Product Details</summary>
+As a customer, I want to view detailed information about a specific wine so that I can make an informed purchasing decision.
 
-3: As a customer, I want to add wines to my shopping cart so that I can review and purchase them later.
+I can view the name, categories, price, description, and origin of a wine.
+I can view customer reviews and ratings for the wine.
+I can view an image of the wine bottle.
+</details>
 
-Acceptance Criteria:
+<hr>
 
-* I can add one or more wines to my shopping cart.
-* I can specify the quantity of each wine I want to add.
-* I can view my cart with all selected wines, their quantities, and the total price.
-* I can remove wines from my cart or change their quantities.
+**Epic 2:** *Shopping Cart and Wishlist Management*
 
-4: As a customer, I want to create an account so that I can manage my orders and personal information.
+As a customer, I want to add wines to my cart or wishlist, manage quantities, and move between these lists so that I can easily manage my potential purchases.
 
-Acceptance Criteria:
+<details> <summary>User Story 3: Shopping Cart</summary>
+As a customer, I want to add wines to my shopping cart so that I can review and purchase them later.
 
-* I can sign up for an account by providing my email, password, and personal information.
-* I can log in and log out of my account.
-* I can recover my password if I forget it.
+I can add one or more wines to my shopping cart.
+I can specify the quantity of each wine I want to add.
+I can view my cart with all selected wines, their quantities, and the total price.
+I can remove wines from my cart or change their quantities.
+</details> <details> <summary>User Story 5: Wishlist</summary>
+As a customer, I want to save wines to my wishlist so that I can purchase them later.
 
-5: As a customer, I want to save wines to my wishlist so that I can purchase them later.
+I can add wines to a wishlist.
+I can view my wishlist and remove items if I change my mind.
+I can move items from my wishlist to my shopping cart.
+</details>
+<hr>
 
-Acceptance Criteria:
+**Epic 3:** *Customer Account Management*
+As a customer, I want to create and manage an account to save my preferences, manage orders, and update personal details.
 
-* I can add wines to a wishlist.
-* I can view my wishlist and remove items if I change my mind.
-* I can move items from my wishlist to my shopping cart.
+<details> <summary>User Story 4: Account Creation</summary>
+As a customer, I want to create an account so that I can manage my orders and personal information.
 
-6: As a customer, I want to checkout and complete my purchase so that I can receive my selected wines.
+I can sign up for an account by providing my email, password, and personal information.
+I can log in and log out of my account.
+I can recover my password if I forget it.
+</details> <details> <summary>User Story 10: Manage Account Details</summary>
+As a customer, I want to manage my account details so that I can update my personal information.
 
-Acceptance Criteria:
+I can update my email, password, shipping address, and billing information.
+I can view my order history and see the status of each order.
+</details>
+<hr>
 
-* I can review my shopping cart before proceeding to checkout.
-* I can enter my shipping address and billing information.
-* I can see a confirmation of my order, including an order number.
+**Epic 4:** *Checkout and Order Management*
+As a customer, I want to complete purchases and track my orders so that I can receive my wines and stay informed on their delivery status.
 
-7: As a customer, I want to receive an email confirmation of my order so that I have a record of my purchase.
+<details> <summary>User Story 6: Checkout/Stripe Integration</summary>
+As a customer, I want to checkout and complete my purchase so that I can receive my selected wines.
 
-Acceptance Criteria:
+I can review my shopping cart before proceeding to checkout.
+I can enter my shipping address and billing information.
+I can see a confirmation of my order, including an order number.
+</details> <details> <summary>User Story 7: Email Order Confirmation</summary>
+As a customer, I want to receive an email confirmation of my order so that I have a record of my purchase.
 
-* After completing the purchase, I receive an email with details about my order.
-* The email includes an order number, summary of items, shipping address, and estimated delivery time.
+After completing the purchase, I receive an email with details about my order.
+The email includes an order number, summary of items, shipping address, and estimated delivery time.
+</details> <details> <summary>User Story 8: Order Status</summary>
+As a customer, I want to track the status of my order so that I know when to expect delivery.
 
-8: As a customer, I want to track the status of my order so that I know when to expect delivery.
+I can view my order status (e.g., pending, shipped, delivered) in my account.
+I receive notifications or emails when the status of my order changes.
+</details>
 
-Acceptance Criteria:
+<hr>
 
-* I can view my order status (e.g., pending, shipped, delivered) in my account.
-* I receive notifications or emails when the status of my order changes.
+**Epic 5:** *Customer Reviews and Feedback*
+As a customer, I want to leave and view reviews and ratings for wines so that I can share my experience and help other customers make decisions.
 
-9: As a customer, I want to leave a review for a wine I purchased so that I can share my experience with other customers.
+<details> <summary>User Story 9: Product Ratings/Reviews</summary>
+As a customer, I want to leave a review for a wine I purchased so that I can share my experience with other customers.
 
-Acceptance Criteria:
+I can rate the wine on a scale from 1 to 5 stars.
+I can write a review with my comments and feedback.
+My review is visible to other customers after submission.
+</details>
+<hr>
 
-* I can rate the wine on a scale from 1 to 5 stars.
-* I can write a review with my comments and feedback.
-* My review is visible to other customers after submission.
+**Epic 6:** *Admin Wine Inventory and Catalog Management*
+As an admin, I want to manage the wine catalog so that I can keep the product offerings accurate and up to date.
 
-10: As a customer, I want to manage my account details so that I can update my personal information.
+<details> <summary>User Story 11: Inventory & Product Management</summary>
+As an admin, I want to manage the wine inventory so that I can keep the product catalog updated.
 
-Acceptance Criteria:
+I can add, edit, or delete wines from the product catalog.
+I can upload or change images for wines.
+I can manage categories and regions for filtering.
+</details>
+<hr>
 
-* I can update my email, password, shipping address, and billing information.
-* I can view my order history and see the status of each order.
+**Epic 7:** *Admin Order and Customer Review Management*
+As an admin, I want to manage customer orders and moderate reviews to ensure smooth order processing and maintain content quality.
 
-<a id=site-admin-user-stories></a>
+<details> <summary>User Story 12: View Customer Orders</summary>
+As an admin, I want to view customer orders so that I can process and update their status.
 
-### Site Admin User Stories
+I can view a list of all orders, including customer information, order status, and items.
+I can update the status of an order (e.g., shipped, delivered).
+I can search for orders by customer name or order number.
+</details> <details> <summary>User Story 13: Rating/Review Moderation</summary>
+As an admin, I want to view customer reviews so that I can moderate or delete inappropriate content.
 
-11: As an admin, I want to manage the wine inventory so that I can keep the product catalog updated.
-
-Acceptance Criteria:
-
-* I can add, edit, or delete wines from the product catalog.
-* I can upload or change images for wines.
-* I can manage categories and regions for filtering.
-
-12: As an admin, I want to view customer orders so that I can process and update their status.
-
-Acceptance Criteria:
-
-* I can view a list of all orders, including customer information, order status, and items.
-* I can update the status of an order (e.g., shipped, delivered).
-* I can search for orders by customer name or order number.
-
-13: As an admin, I want to view customer reviews so that I can moderate or delete inappropriate content.
-
-Acceptance Criteria:
-
-* I can view all submitted reviews.
-* I can delete reviews that violate the terms of service.
-* I can filter reviews by wine or customer.
+I can view all submitted reviews.
+I can delete reviews that violate the terms of service.
+I can filter reviews by wine or customer.
+</details>
 
 <a id=features></a>
 
