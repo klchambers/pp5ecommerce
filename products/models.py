@@ -34,6 +34,16 @@ class Region(models.Model):
         return f"{self.name}, {self.country}"
 
 
+class GrapeVariety(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+
+    class Meta:
+        verbose_name_plural = "grape varieties"
+
+    def __str__(self):
+        return self.name
+
+
 class Wine(models.Model):
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254)
@@ -46,6 +56,8 @@ class Wine(models.Model):
     region = models.ForeignKey(Region, on_delete=models.SET_NULL, null=True)
     rating = models.DecimalField(max_digits=6, null=True, decimal_places=0)
     image = models.ImageField(blank=True)
+    grape_varieties = models.ManyToManyField(
+        GrapeVariety, related_name='wines')
 
     """
     Automatically generate a slug from the title.
