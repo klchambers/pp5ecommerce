@@ -10,6 +10,10 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
     friendly_name = models.CharField(max_length=100)
 
+    # Corrects automatic pluralisation of 'categorys'
+    class Meta:
+        verbose_name_plural = "categories"
+
     def __str__(self):
         return self.friendly_name if self.friendly_name else self.name
 
@@ -17,7 +21,7 @@ class Category(models.Model):
 class Region(models.Model):
     # name = region, e.g., "Beaujolais"
     name = models.CharField(max_length=254)
-    # country stores country
+    # Corresponding country in which the region is located
     country = models.CharField(max_length=254)
 
     class Meta:
