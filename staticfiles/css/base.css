@@ -18,6 +18,16 @@ body {
     overflow-y: scroll;
 }
 
+.filters {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filters .filter_by {
+    text-decoration: none;
+    color: inherit;
+}
 .overlay {
 	height: 100%;
 	width: 100%;
@@ -44,7 +54,14 @@ body {
     width: 100%;
     height: auto;
 }
-  
+ 
+/* Making the filter scrollable */
+#filterCollapse {
+    max-height: 95vh;
+    overflow-y: scroll; /* Enables vertical scroll */
+}
+
+
 /* Media queries */
 @media (max-width: 768px) {
      /* Make sure the navbar buttons take full width */
