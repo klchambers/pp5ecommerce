@@ -42,6 +42,12 @@ def all_products(request):
         else:
             selected_regions = []
 
+        sort_by = request.GET.get("sort", "l2h")
+        if sort_by == "l2h":
+            products = products.order_by("price")
+        elif sort_by == "h2l":
+            products = products.order_by("-price")
+
     context = {
         'products': products,
         'search_term': query,

@@ -21,6 +21,10 @@
             <div class="col-sm-3 col-md-2">
                 <form method="GET" action="">
                     <div class="collapse d-md-block" id="filterCollapse">
+                        <p><strong>Sort By</strong></p>
+                        <li class="filters"><a class="filter_by" href="?sort=l2h">Price: low to high</a></li>
+                        <li class="filters"><a class="filter_by" href="?sort=h2l">Price: high to low</a></li>
+                        <hr>
                         <p><strong>Filter Products</strong></p>
                         <p>Style</p>
                         {% for category in categories %}
