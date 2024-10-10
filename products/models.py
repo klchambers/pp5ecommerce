@@ -29,6 +29,8 @@ class Region(models.Model):
         # allows same region in different countries
         # e.g. Basque Country, Spain & Basque Country, France
         unique_together = ('name', 'country')
+        # Order by country first, then by region
+        ordering = ['country', 'name']
 
     def __str__(self):
         return f"{self.name}, {self.country}"
