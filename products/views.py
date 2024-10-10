@@ -14,22 +14,40 @@ def all_products(request):
     region = Region.objects.all()
 
     if request.GET:
+        # Search term query
         if 'q' in request.GET:
-            query = request.GET['q']
-            if not query:
+            query = request.GET.get('q')
+            if query:
+                queries = Q(name__icontains=query) | Q(description__icontains=query) # noqa
+                products = products.filter(queries)
+            else:
                 messages.error(request,
                                'Error: You did not enter a search term')
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query) # noqa
+        # Category filter query
+        if 'category' in request.GET:
+            selected_categories = request.GET.getlist('category')
+            if selected_categories:
+                products = products.filter(
+                    category__id__in=selected_categories)
+        else:
+            selected_categories = []
 
-            products = products.filter(queries)
+        # Region filter query
+        if 'region' in request.GET:
+            selected_regions = request.GET.getlist('region')
+            if selected_regions:
+                products = products.filter(region__id__in=selected_regions)
+        else:
+            selected_regions = []
 
     context = {
         'products': products,
         'search_term': query,
         'categories': categories,
         'regions': region,
+        'selected_categories': categories
     }
 
     return render(request, 'products/products.html', context)

@@ -42,7 +42,7 @@
   <header class="header-container fixed-top">
     <div class="row">
       <!-- Logo centered -->
-      <div class="col-12 my-auto py-1 py-lg-0 text-center">
+      <div class="col-12 py-1 py-lg-0 text-center">
         <a href="{% url 'home' %}" class="main-logo glouglou-logo">
           <img src="{% static 'logos/logo5.png' %}" alt="GlouGlou Logo" class="img-fluid text-center"
             style="width: 400px;">
@@ -61,7 +61,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
           <!-- Search Bar -->
-          <form class="d-flex me-auto my-2 my-lg-0" method="GET" action="{% url 'products' %}">
+          <form class="d-flex me-auto mb-2 my-lg-0" method="GET" action="{% url 'products' %}">
             <input class="form-control me-2" type="search" name="q" placeholder="Search..." aria-label="Search"
               style="max-width: 200px;">
             <button class="btn btn-outline-secondary" type="submit">
