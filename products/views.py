@@ -42,6 +42,9 @@ def all_products(request):
         else:
             selected_regions = []
 
+        """Sorting logic adapted from code posted by
+        Stack Overflow user Prakhar on 31/7/2021
+        https://stackoverflow.com/questions/68604759/how-to-sort-product-by-price-low-to-high-and-high-to-low-in-django-with-fillters""" # noqa
         sort_by = request.GET.get("sort", "l2h")
         if sort_by == "l2h":
             products = products.order_by("price")
