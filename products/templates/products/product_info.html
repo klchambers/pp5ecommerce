@@ -33,6 +33,20 @@
                         </span>
                     </p>
                     {% endif %}
+                    {% if product.region %}
+                    <p class="small mt-1 mb-0">
+                        <span>
+                            <i class="fas fa-map-pin fa-lg mr-3"></i>  {{ product.region }}
+                        </span>
+                    </p>
+                    {% endif %}
+                    {% if product.grape_variety %}
+                    <p class="small mt-1 mb-0">
+                        <span>
+                            {{ product.grape_variety }}
+                        </span>
+                    </p>
+                    {% endif %}
                     {% if product.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i> {{ product.rating }} / 5</small>
                     {% else %}
