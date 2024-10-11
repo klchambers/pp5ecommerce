@@ -13,6 +13,9 @@ def all_products(request):
     categories = Category.objects.all()
     region = Region.objects.all()
 
+    selected_categories = []
+    selected_regions = []
+
     if request.GET:
         # Search term query
         if 'q' in request.GET:
@@ -56,7 +59,8 @@ def all_products(request):
         'search_term': query,
         'categories': categories,
         'regions': region,
-        'selected_categories': categories,
+        'selected_categories': selected_categories,
+        'selected_regions': selected_regions,
     }
 
     return render(request, 'products/products.html', context)
