@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404 # noqa
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Wine, Category, Region
@@ -60,3 +60,15 @@ def all_products(request):
     }
 
     return render(request, 'products/products.html', context)
+
+
+def product_info(request, product_id):
+    """ A view to show individual product details """
+
+    product = get_object_or_404(Wine, pk=product_id)
+
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'products/product_info.html', context)
