@@ -7,7 +7,7 @@ html, body {
     padding: 0;
     height: 100%;
     overflow-x: hidden; /* Prevents horizontal scroll */
-    font-family: 'Rubik', Helvetica, sans-serif;
+    font-family: 'Rubik', Helvetica, sans-serif
 }
 
 body {
@@ -16,6 +16,13 @@ body {
     background-size: cover;
     box-sizing: border-box;
     overflow-y: scroll;
+}
+
+.product-description, .product-description p, .product-description span {
+    font-family: 'Rubik', sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    color: inherit;
 }
 
 .filters {
