@@ -13,6 +13,7 @@ def all_products(request):
     categories = Category.objects.all()
     region = Region.objects.all()
 
+    # Initialise lists for filters
     selected_categories = []
     selected_regions = []
 
