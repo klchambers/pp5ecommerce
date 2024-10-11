@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Wine, Category, Region, GrapeVariety
+from .models import Wine, Category, Region
 
 
 # Create your views here.
@@ -12,7 +12,6 @@ def all_products(request):
     query = None
     categories = Category.objects.all()
     region = Region.objects.all()
-    grape_variety = GrapeVariety.objects.all()
 
     if request.GET:
         # Search term query
@@ -58,7 +57,6 @@ def all_products(request):
         'categories': categories,
         'regions': region,
         'selected_categories': categories,
-        'grape_variety': grape_variety
     }
 
     return render(request, 'products/products.html', context)

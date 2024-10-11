@@ -40,10 +40,12 @@
                         </span>
                     </p>
                     {% endif %}
-                    {% if product.grape_variety %}
-                    <p class="small mt-1 mb-0">
+                    {% if product.grape_varieties.all %}
+                    <p class="small mt-1 mb-0"><i class="fas fa-wine-glass-empty"></i> 
                         <span>
-                            {{ product.grape_variety }}
+                            {% for variety in product.grape_varieties.all %}
+                            {{ variety.name }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
                         </span>
                     </p>
                     {% endif %}
