@@ -6,13 +6,15 @@
 {% endblock %}
 
 {% block content %}
-<div class="d-flex justify-content-center align-items-center min-vh-100">
-    <div class="row h-100">
-        <div class="col-12 col-md-6 my-auto bg-light opacity-75 bg-gradient rounded-2 text-center">
+<div class="container">
+    <div class="row justify-content-center" style="padding-top: 200px;">
+        <!-- CTA text box -->
+        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center bg-light opacity-75 bg-gradient rounded-2 text-center">
             <h1 class="display-4 py-2 px-3 opacity-100 text-center">Lorem Ipsum Blah Blah Blah</h1>
         </div>
-        <div class="col-12 col-md-6 text-center text-md-center mt-3">
-            <a href="{% url 'products' %}" class="fs-1 fs-md-2 btn btn-success btn-large rounded-2 text-uppercase py-3 d-md-center">Enter shop</a>
+        <!-- Enter shop button -->
+        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center text-center">
+            <a href="{% url 'products' %}" class="fs-1 fs-md-2 btn btn-success btn-large rounded-2 text-uppercase py-3">Enter shop</a>
         </div>  
     </div>
 </div>
