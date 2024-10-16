@@ -76,20 +76,11 @@
           <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
 
             <!-- Shop Button -->
-            <li class="nav-item dropdown">
-              <a class="nav-link text-center text-secondary pt-4 pb-0" href="#" id="shop-options" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-wine-bottle fa-lg d-none d-md-block"></i>
-                <p class="pt-2">Shop</p>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="shop-options">
-                <li><a class="dropdown-item" href="{% url 'products' %}">View all products</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">View styles</a></li>
-                <li><a class="dropdown-item" href="#">View regions</a></li>
-                <li><a class="dropdown-item" href="#">View grape varieties</a></li>
-              </ul>
-            </li>
+            <a class="nav-link text-center text-secondary pt-4 pb-0" href="{% url 'products' %}" role="button"s>
+              <i class="fas fa-wine-bottle fa-lg d-none d-md-block"></i>
+              <p class="pt-2">Shop</p>
+            </a>
+
 
             <!-- Account Dropdown -->
             <li class="nav-item dropdown">
