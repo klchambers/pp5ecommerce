@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from cloudinary.models import CloudinaryField
 
 
 class Category(models.Model):
@@ -65,7 +66,7 @@ class Wine(models.Model):
                                  null=True,
                                  blank=True,
                                  decimal_places=0)
-    image = models.ImageField(blank=True)
+    image = CloudinaryField('image', blank=True)
     grape_varieties = models.ManyToManyField(
         GrapeVariety, related_name='wines', blank=True)
 
