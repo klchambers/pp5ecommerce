@@ -39,17 +39,23 @@
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.product.friendly_name }}</strong></p>
-                                        <p><em>
+                                        <p><small><em>
                                             <!-- Looping through and displaying categories -->
+                                            <i class="fas fa-wine-bottle"></i>
                                             {% for category in item.product.category.all %}
                                                 {{ category.friendly_name }}{% if not forloop.last %}, {% endif %}
                                             {% endfor %}
-                                        </em></p>
-                                        <p><em>{{ item.product.winemaker }}</em></p>
-                                        <p><em>
-                                        {% for variety in item.product.grape_varieties.all %}
-                                            {{ variety.name }}{% if not forloop.last %}, {% endif %}
-                                        {% endfor %}</em></p>
+                                            <br>
+                                            <!-- Winemaker/producer name-->
+                                            <i class="fas fa-person fa-lg mr-3"></i>
+                                            {{ item.product.winemaker }}
+                                            <br>
+                                            <!-- Displaying grape varieties-->
+                                            <i class="fas fa-wine-glass-empty"></i>
+                                            {% for variety in item.product.grape_varieties.all %}
+                                                {{ variety.name }}{% if not forloop.last %}, {% endif %}
+                                            {% endfor %}
+                                        </small></em></p>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">€{{ item.product.price }}</p>
