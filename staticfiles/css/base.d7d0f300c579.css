@@ -12,7 +12,7 @@ html, body {
 
 body {
     padding-top: 250px; /* Pushes the content down to leave space for the fixed header */
-    background: url('/static/images/homepage_img.jpg') no-repeat center center fixed;
+    background: url("/static/images/homepage_img.940ae882bb65.jpg") no-repeat center center fixed;
     background-size: cover;
     box-sizing: border-box;
     overflow-y: scroll;
