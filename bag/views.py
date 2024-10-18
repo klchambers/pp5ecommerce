@@ -12,7 +12,7 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 
-    product = Wine.objects.get(pk=item_id)
+    product = get_object_or_404(Wine, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
@@ -43,7 +43,8 @@ def adjust_bag(request, item_id):
     if quantity > 0:
         bag[item_id] = quantity
         messages.success(
-            request, f"Updated {product.friendly_name} quantity to {bag[item_id]}")
+            request,
+            f"Updated {product.friendly_name} quantity to {bag[item_id]}")
     else:
         bag.pop(item_id)
         messages.success(
