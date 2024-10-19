@@ -36,6 +36,26 @@ class Order(models.Model):
         null=False,
         default=0)
 
+    def _generate_order_number(self):
+        """Generates a random unique order number"""
+        return uuid.uuid4().hex.upper()
+
+    def update_total(self):
+        """Update grand_total when line item is added"""
+        self.order_total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum']
+        self.grand_total = self.order_total + self.delivery_cost
+        self.save()
+
+    def save(self, *args, **kwargs):
+        """Override original save method to set order number if needed"""
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.order_number
+
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(
@@ -55,4 +75,13 @@ class OrderLineItem(models.Model):
         decimal_places=2,
         null=False,
         blank=False,
-        ditable=False)
+        editable=False)
+
+    def save(self, *args, **kwargs):
+        """Override original save method to set
+        lineitem total and update order total"""
+        self.lineitem_total = self.product.price * self.quantity
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'{self.product.name}: {self.product.quantity}'
