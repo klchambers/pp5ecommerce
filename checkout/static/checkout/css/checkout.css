@@ -41,6 +41,16 @@ input:focus, .card-container:focus-within {
     right: .5rem;
 }
 
+select,
+select option {
+  color: #000;
+}
+
+select:invalid,
+select option[value='']{
+  color: #aab7c4 !important;
+}
+
 /* Payment processing overlay */
 #loading-overlay {
 	display: none;
