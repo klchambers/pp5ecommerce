@@ -89,6 +89,15 @@ def checkout(request):
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
+            current_bag = bag_contents(request)
+            total = current_bag['grand_total']
+            stripe_total = round(total * 100)
+            stripe.api_key = stripe_secret_key
+            intent = stripe.PaymentIntent.create(
+                amount=stripe_total,
+                currency=settings.STRIPE_CURRENCY
+            )
+
     else:
         bag = request.session.get('bag', {})
         if not bag:
