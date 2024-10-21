@@ -4,7 +4,7 @@
 
 {% load crispy_forms_tags %}
 
-{% block extracss %}
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
@@ -111,6 +111,13 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div id="loading-overlay">
+        <h1 class="text-light loading-spinner">
+            <span class="icon">
+                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+            </span>
+        </h1>
     </div>
 {% endblock %}
 
