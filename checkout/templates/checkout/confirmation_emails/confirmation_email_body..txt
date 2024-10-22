@@ -1,0 +1,1 @@
+GlouGlou Wines | Confirmation of order #{{ order.order_number }}
