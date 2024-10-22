@@ -18,6 +18,9 @@ class Category(models.Model):
     def __str__(self):
         return self.friendly_name if self.friendly_name else self.name
 
+    def get_friendly_name(self):
+        return self.friendly_name
+
 
 class Region(models.Model):
     # name = region, e.g., "Beaujolais"
