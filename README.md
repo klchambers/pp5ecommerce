@@ -259,6 +259,37 @@ HTML validation of individual pages can be viewed in the drop down boxes below:
 
 ### Manual Testing Methodology
 
+| **Test ID**   | **Feature**                  | **Test Case**                                                                                                              | **Expected Result**                                                                                                                                                          |
+|---------------|------------------------------|---------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **AUTH-001**  | **User Authentication**       | Register a new user via the registration form.                                                                          | Registration email received to specified email address. Once link in email is followed, the user is successfully created, and the user is logged in and redirected to the homepage.                                                                               |
+| **AUTH-002**  |                              | Attempt to register with invalid email/password.                                                                         | User is shown appropriate error messages, and registration fails.                                                                                                             |
+| **AUTH-003**  |                              | Log in with valid credentials.                                                                                           | User is successfully logged in and redirected to the homepage.                                                                                              |
+| **AUTH-004**  |                              | Log in with invalid credentials.                                                                                         | User is shown an error message, and login fails.                                                                                                                              |
+| **AUTH-005**  |                              | Check that an unauthenticated user can checkout as a guest.                                                              | Guest checkout works as expected, with the user asked for shipping and payment information without requiring login.                                                           |
+| **AUTH-006**  |                              | Check that an authenticated user can view their order history.                                                           | Authenticated user should be able to see past orders and order details.                                                                                                       |
+| **CART-001**  | **Cart/Bag Functionality**    | Add items to the cart as an authenticated user.                                                                          | Items are successfully added to the cart, and the cart page shows the correct items, quantities, and total price.                                                             |
+| **CART-002**  |                              | Remove items from the cart.                                                                                              | Items are successfully removed, and the cart is updated.                                                                                                                      |
+| **CART-003**  |                              | Modify the quantity of items in the cart.                                                                                | Quantity of items is updated, and the total price adjusts accordingly.                                                                                                       |
+| **CART-004**  |                              | Add items to the cart as a guest user.                                                                                   | Guest users should be able to add items to the cart without logging in.                                                                                                       |
+| **CART-005**  |                              | Clear the cart as a guest user and authenticated user.                                                                   | Cart should be empty after clearing, and users should receive a confirmation message.                                                                                         |
+| **ORDER-001** | **Order Management**         | Complete a checkout process as a guest user.                                                                             | Guest users can place orders without creating an account, and they should receive an order confirmation email.                                                                |
+| **ORDER-002** |                              | Complete a checkout process as an authenticated user.                                                                    | Authenticated users can place orders, and the order is visible in their order history. They should receive a confirmation email with order details.                            |
+| **ORDER-003** |                              | Modify default delivery information for authenticated users.                                                             | Users can change their default delivery information, and the changes are saved and reflected in the next order they place.                                                    |
+| **ORDER-004** |                              | Check that orders are saved and viewable in the user’s past orders.                                                      | The past orders section shows all previously placed orders with details such as items purchased, total cost, and delivery address.                                             |
+| **CHECKOUT-001** | **Checkout Process**      | Try to checkout without filling in required fields (e.g., address, payment method).                                       | Form validation messages should appear under the fields indicating what is missing or invalid.                                                                                 |
+| **CHECKOUT-002** |                           | Try an unsuccessful checkout with an invalid payment method.                                                             | An error message should be displayed to the user, indicating the issue with the payment method, and the checkout should not be processed.                                      |
+| **CHECKOUT-003** |                           | Successfully checkout after filling all required fields.                                                                 | The order should be successfully processed, and the user should be redirected to a confirmation page with a toast message confirming the order.                               |
+| **ADMIN-001** | **Admin - Product Management**| Log in as an admin user and create a new product.                                                                 | The new product is successfully created and appears in the product listing page, with all relevant details such as name, category, price, and image.                           |
+| **ADMIN-002** |                              | Edit an existing product as an admin user.                                                                               | The product details should be updated accordingly, and the changes should be reflected across the site.                                                                       |
+| **ADMIN-003** |                              | Delete a product as an admin user.                                                                                       | The product should be removed from the product listing page, and attempting to access the product’s page should result in a 404 error or a message that the product is removed. |
+| **SEARCH-001**| **Search Functionality**      | Use the search bar to find a specific product by name.                                                                   | The relevant product(s) should appear in the search results, showing the name, price, and other key details.                                                                  |
+| **SEARCH-002**|                              | Search for a product by partial name.                                                                                    | Products matching the partial name should be displayed in the results, allowing for flexible searching.                                                                       |
+| **SEARCH-003**|                              | Search for a product that does not exist.                                                                                | A message should be displayed indicating no products were found for the search query.                                                                                         |
+| **SEARCH-004**|                              | Search for products as a guest user.                                                                                     | Search functionality should work the same for both guest and authenticated users.                                                                                             |
+| **TOAST-001** | **Toast Notifications**       | Add a product to the cart as an authenticated user and guest user.                                                       | A success toast notification should appear indicating the product was added to the cart.                                                                                      |
+| **TOAST-002** |                              | Complete a successful checkout.                                                                                          | A toast notification should appear confirming the order was placed successfully.                                                                                              |
+| **TOAST-003** |                              | Update user details such as delivery information.                                                                        | A success toast notification should confirm that the user details were updated successfully.                                                                                  |
+| **EMAIL-001** | **Order Confirmation**       | Place an order and verify that a confirmation email is sent to both guest and authenticated users.                       | An order confirmation email should be sent immediately after an order is placed, containing the order number, summary of the order, and delivery information.                  |
 
 
 ### Bugs and Challenges
@@ -378,15 +409,30 @@ Follow the instructions in your terminal to create your superuser account userna
 * [**Visual Studio Code**](https://code.visualstudio.com/): Text editor for development
 * [**Heroku**](https://www.heroku.com): Live deployment of web app
 * [**Balsamiq**](https://balsamiq.com/wireframes/): Wireframing tool used to create UI mock-ups at project outset
+* [**Canva**](https://www.canva.com/): Logo design
 * [**Django Summernote**](https://github.com/lqez/django-summernote): HTML text editor for text fields
 * [**Whitenoise**](https://whitenoise.readthedocs.io/en/stable/index.html): Static file serving
+* [**Cloudinary**](https://cloudinary.com/): Media file storage
 * [**Pillow**](https://pillow.readthedocs.io/en/stable/): Image processing
+* [**Stripe**](https://stripe.com/ie): Payment gateway
+* [**Django Crispy Forms**](https://django-crispy-forms.readthedocs.io/en/latest/): Form rendering
+* [**Gmail**](https://developers.google.com/gmail/imap/imap-smtp): SMTP server for email
 
 <a id=acknowledgements></a>
 
 ## Acknowledgements
+* Course content from Code Institute's Diploma in Full Stack Software Development has been useful in teaching programming concepts and Python methods.
+
+* Guidance from Code Institute mentor Brian O'Hare has been invaluable throughout the stages of this project's inception and development.
+
 * Homepage landing [image](https://www.pexels.com/photo/wine-glass-bottle-87224/) by [Timur Saglambilek](https://www.pexels.com/@marketingtuig/) on [Pexels](https://www.pexels.com/)
+
+* Product photos author's own
 
 * Use of Slugify to generate and save slugs adapted from code posted by [Ikechukwu Henry Odoh](https://stackoverflow.com/users/2261257/ikechukwu-henry-odoh) in [this](https://stackoverflow.com/questions/50436658/how-to-auto-generate-slug-from-my-album-model-in-django-2-0-4) Stack Overflow thread
 
 * Sort By price adapted from code posted by [Prakhar](https://stackoverflow.com/users/14264497/prakhar) in [this](https://stackoverflow.com/questions/68604759/how-to-sort-product-by-price-low-to-high-and-high-to-low-in-django-with-fillters) Stack Overflow thread
+
+* Product descriptions By Len Ahern & L'Atitude 51, Cork
+
+* [Rubik](https://fonts.google.com/specimen/Rubik) font by [Hubert & Fischer](https://hfs-studio.com/about/) used for site body content
