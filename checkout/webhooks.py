@@ -49,7 +49,7 @@ def webhook(request):
     # Map webhook events to relevant handler functions
     event_map = {
         'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
-        'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
+        'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed, # noqa
     }
 
     # Get the webhook type from Stripe
@@ -65,4 +65,5 @@ def webhook(request):
         return response
     except Exception as e:
         logger.error(f"Error handling {event_type}: {e}")
-        return HttpResponse(content=f"Error handling {event_type}: {e}", status=500)
+        return HttpResponse(
+            content=f"Error handling {event_type}: {e}", status=500)
