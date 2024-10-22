@@ -7,10 +7,10 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Wine
         fields = '__all__'
+        exclude = ['slug']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        categories = Category.objects.all()
 
         """Set the category field as a
         ModelMultipleChoiceField for the ManyToManyField"""
@@ -20,4 +20,3 @@ class ProductForm(forms.ModelForm):
             widget=forms.CheckboxSelectMultiple,
             required=False
         )
-
