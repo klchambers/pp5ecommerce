@@ -26,6 +26,12 @@
 
 ## Introduction
 
+![GlouGlou Wine Store Responsiveness Mockup](/documentation/images/responsiveness-mockup.png)
+
+GlouGlou Wine Store is a mobile-first e-commerce web application built with Django for a natural wine webshop.
+
+The project emphasizes responsive design to ensure a smooth user experience across all devices. It provides a seamless registration, shopping, and checkout experience for customers, with intuitive product management for admins. Integration of Stripe ensures secure and simple transactions, and the application is deployed on Heroku making the platform accessible from anywhere.
+
 
 
 <a id=deployed-site></a>
