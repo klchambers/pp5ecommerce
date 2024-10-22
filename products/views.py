@@ -95,7 +95,7 @@ def add_product(request):
                            Please ensure that the form is valid')
     else:
         form = ProductForm()
-
+ 
     template = 'products/add_product.html'
     context = {
         'form': form,
