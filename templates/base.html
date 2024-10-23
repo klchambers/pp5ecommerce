@@ -75,13 +75,15 @@
           </form>
 
           <!-- Right-aligned Items -->
-          <div class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+          <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
 
             <!-- Shop Button -->
-            <a class="nav-link text-center text-secondary pt-4 pb-0" href="{% url 'products' %}" role="button">
-              <i class="fas fa-wine-bottle fa-lg d-none d-md-block"></i>
-              <p class="pt-2">Shop</p>
-            </a>
+            <li class="nav-item">
+              <a class="nav-link text-center text-secondary pt-4 pb-0" href="{% url 'products' %}">
+                <i class="fas fa-wine-bottle fa-lg d-none d-md-block"></i>
+                <p class="pt-2">Shop</p>
+              </a>
+            </li>
             <!-- Newsletter signup -->
             <li class="nav-item">
               <a class="nav-link text-center text-secondary pt-4 pb-0" href="#" data-bs-toggle="modal" data-bs-target="#newsletterModal">
@@ -124,7 +126,7 @@
                 </p>
               </a>
             </li>
-          </div>
+          </ul>
         </div>
       </div>
     </nav>
