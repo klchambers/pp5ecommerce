@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /accounts/signup/
+Disallow: /accounts/login/
+Disallow: /accounts/password/reset/
+Disallow: /bag/
+Allow: /
+
+Sitemap: https://pp5ecommerce-a72d5065ca06.herokuapp.com/sitemap.xml
