@@ -375,18 +375,18 @@ HTML validation of individual pages can be viewed in the drop down boxes below:
 
 #### CSS
 
-
+GlouGlou's CSS passed the W3C Jigsaw Css Validator with no issues. Results can be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fpp5ecommerce-a72d5065ca06.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 
 <a id=jshint-code-analysis></a>
 
 ### JSHint Code Analysis
 
-
+JavaScript passed JSHint Code analysis tool with no issues found. Results can be viewed below.
 
 <details>
 <summary>JSHint Code Analysis Screenshot</summary>
 <br>
-<img src=''>
+<img src='/documentation/validation-screenshots/homepage-validation.png'>
 </details>
 
 
