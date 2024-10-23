@@ -44,6 +44,25 @@ The program has been deployed to Heroku and can be accessed [here](https://pp5ec
 
 ## User Experience
 
+<a id=features></a>
+
+## Features
+
+#### Homepage
+
+#### Product Page
+
+#### Product Information
+
+#### Shopping Bag
+
+#### Checkout
+
+#### User Profile
+
+
+<hr>
+
 ## Business Model
 ### Introduction
 GlouGlou Wine Store is an e-commerce platform designed for wine enthusiasts to explore, select, and purchase wines from different regions, varieties, and categories. The business aims to provide a smooth, customer-focused online shopping experience with curated wine selections, user ratings, and reviews, as well as seamless order management.
@@ -101,29 +120,6 @@ Each wireframe link presents mock-ups for the corresponding pages, showcasing th
 <a href='/documentation/wireframes/CheckoutWireframes.pdf'>Checkout Page Wireframes</a>
 
 <a href='/documentation/wireframes/ProfilePageWireframes.pdf'>User Profile Page Wireframes</a>
-
-
-<a id=features></a>
-
-## Features
-
-#### Homepage
-
-#### Product Page
-
-#### Product Information
-
-#### Shopping Bag
-
-#### Checkout
-
-#### User Profile
-
-#### User Ratings
-
-#### Contact Us
-
-<hr>
 
 <a id=design></a>
 
