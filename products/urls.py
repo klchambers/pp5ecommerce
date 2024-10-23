@@ -1,5 +1,4 @@
 from django.urls import path
-from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
@@ -10,10 +9,4 @@ urlpatterns = [
          views.delete_product,
          name='delete_product'),
     path('add/', views.add_product, name='add_product'),
-    # Serve robots.txt
-    path('robots.txt', TemplateView.as_view(
-        template_name="robots.txt", content_type='text/plain')),
-    # Serve sitemap.xml
-    path('sitemap.xml', TemplateView.as_view(
-        template_name="sitemap.xml", content_type='application/xml')),
 ]
