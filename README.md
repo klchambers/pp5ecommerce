@@ -386,7 +386,7 @@ JavaScript passed JSHint Code analysis tool with no issues found. Results can be
 <details>
 <summary>JSHint Code Analysis Screenshot</summary>
 <br>
-<img src='/documentation/validation-screenshots/homepage-validation.png'>
+<img src='documentation/validation-screenshots/jshint.png')
 </details>
 
 
