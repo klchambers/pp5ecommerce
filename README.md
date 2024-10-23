@@ -57,6 +57,17 @@ A distinctive logo at the top of the page lets them know that they are visiting 
 
 In the navbar, the user can search for products in the search field, register/login/logout through 'my account', enter the shop, view their shopping bag, and signup to the newsletter.
 
+If logged out, the user can log in or register for an account via the buttons in the 'My Account' drop down menu.
+
+When registering for an account, a confirmation email will be sent to the email address provided.
+
+Please note that the initial email may be directed to your spam folder. This can happen due to several factors:
+
+- New Sender Recognition: If this is the first time you are receiving an email from GlouGlou, your email provider might not immediately recognize it as safe.
+- Email Filtering: Gmail and other providers have advanced spam detection systems that may mistakenly flag the confirmation email as unsolicited, especially if it's sent from an automated system.
+- First-Time Communication: As the first email from our domain, the provider may treat it more cautiously, categorizing it as spam.
+To ensure you receive the confirmation and future emails, please check your spam folder, and mark the email as 'Not Spam,'.
+
 #### Newsletter signup
 
 ![Mailchimp form 1](/documentation/screencaps/newsletter1.png)
@@ -74,9 +85,11 @@ The user can confirm that they wish to subscribe to the newsletter, they will th
 
 ![Mailchimp verified](/documentation/screencaps/newsletter-verified.png)
 
+Please note that sign up verification and confirmation emails may be directed to your spam folder.
+
 #### Product Page
 
-Selecting 'Shop' from the navbar takes the user to the products page, displaying all products.
+Selecting 'Shop' from the navbar takes the user to the products page, displaying all products with relevant information/images (with a path to a default 'noimage.png' if no image is found).
 
 ![Products page](/documentation/screencaps/products.png)
 
