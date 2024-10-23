@@ -29,3 +29,6 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Set custom 404 handler to the project-level views
+handler404 = 'pp5ecommerce.views.custom_404'
