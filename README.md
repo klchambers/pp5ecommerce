@@ -312,7 +312,7 @@ As an admin, I want to manage the wine catalog so that I can keep the product of
 
 As an admin, I want to manage customer orders and moderate reviews to ensure smooth order processing and maintain content quality.
 
-<a id="business-model></a>
+<a id="business-model"></a>
 
 ## Business Model
 ### Introduction
