@@ -116,8 +116,40 @@ At the bottom of this page they can choose to return to products, or continue to
 
 #### Checkout
 
+When proceeding to Checkout, the user sees a summary of products and costs to check that their order is correct, and any delivery information saved to their profile will be auto-filled in the form on the left.
+
+![Checkout](/documentation/screencaps/checkout.png)
+
+Once delilvery information and card details are entered, a payment processing overlay displays to give feedback to the user that payment is in process.
+
+![Checkout2](/documentation/screencaps/checkout-processing.png)
+
+Any Stripe elements for confirmation/verification are presented above this overlay to ensure that the user does not miss any important information. The green spinner overlay is present until the payment is processed. Webhooks ensure that all orders are saved to the database even if this page is accidentally or intentionally closed etc during processing.
+
+![Checkout3](/documentation/screencaps/checkout-processing-stripe.png)
+
+The user is then shown their order confirmation, with an order confirmation sent to their email address.
+
+Feedback for both successful/unsuccessful orders is given to the user in the form of Bootstrap toasts. Successful orders show the user's order number while unsuccessful order toasts present any relevant error message to the user and invites them to try the form again.
+
+![Order confirmation page](/documentation/screencaps/order-confirmation.png)
+![Order confirmation email](/documentation/screencaps/order-confirmation-email.png)
+
 #### User Profile
 
+If logged in, a user can view their profile page. Here they can view a summary of past orders (clicking on the highlighted order number takes them to their original order confirmation generated at the order's creation), and default delivery information.
+
+If completed and saved, this delivery information will be automatically filled out for the user at future checkouts.
+
+![User Profile screencap](/documentation/screencaps/user-profile.png)
+
+#### Product Administration: Create products
+
+If logged in as a superuser, an option for 'Product Management' comes available under the 'My Profile' section of the navbar.
+
+Here a superuser can create new products, with Cloudinary image field submission, product descriptions, names, and prices without a need to log into the Django admin panel.
+
+![Add Product Admin Screenshots](/documentation/screencaps/product-management-add_product.png)
 
 <hr>
 
