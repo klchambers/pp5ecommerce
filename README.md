@@ -241,7 +241,9 @@ The target customers for GlouGlou Wine Store are:
 ### Revenue Model
 The primary source of revenue for GlouGlou Wine Store is through product sales:
 * Direct sales of wines: Customers purchase wines directly from the online store.
+
 Customer Acquisition Channels
+
 To drive traffic and conversions, GlouGlou Wine Store uses several customer acquisition strategies:
 1. Search Engine Optimization (SEO): Ensuring the store ranks highly on search engines for key terms like "online wine store" or "best wines for delivery."
 2. Social Media Marketing: Engaging customers through platforms like Instagram and Facebook, showcasing wine selections, reviews, and customer testimonials.
