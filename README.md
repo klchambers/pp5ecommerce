@@ -391,7 +391,35 @@ HTML validation of individual pages can be viewed in the drop down boxes below:
 <details>
 <summary>Homepage</summary>
 <br>
-<img src=''>
+<img src='documentation/validation-screenshots/homepage-validation.png'>
+</details>
+
+<details>
+<summary>Products</summary>
+<br>
+<img src='documentation/validation-screenshots/productpage-validation.png'>
+</details>
+
+<details>
+<summary>Product Info</summary>
+<br>
+<img src='documentation/validation-screenshots/product-info-validation.png'>
+An error returned while validating product_info.html. On closer inspection this appears to stem from formatted text rendered by the Summernote textfield used for formatting product descriptions
+<img src='documentation/validation-screenshots/product-info-validation-2.png'>
+</details>
+
+<details>
+<summary>Checkout</summary>
+<br>
+An error was reported on the page source for /checkout.html relating to the use of placeholder text for the 'Country' field, as well as a warning for an Empty h1 tag.
+It was deemed appropriate to keep these as is, as the placeholder text provides important information to the user relating to a mandatory field, and the empty h1 tag is for a decorative spinner appearing on the payment processing overlay.
+<img src='documentation/validation-screenshots/checkout-validation.png'>
+</details>
+
+<details>
+<summary>User Profile</summary>
+<br>
+<img src='documentation/validation-screenshots/profile-validation.png'>
 </details>
 
 #### CSS
