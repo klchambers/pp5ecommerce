@@ -83,11 +83,6 @@ body {
     padding-bottom: 20px
 }
 
-#newsletterModal .modal-dialog {
-    max-width: 600px; /* Match the signup field width */
-    width: 100%;
-  }
-  
 /* Media queries */
 @media (max-width: 768px) {
      /* Make sure the navbar buttons take full width */
