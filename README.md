@@ -179,10 +179,31 @@ Each wireframe link presents mock-ups for the corresponding pages, showcasing th
 
 #### Colour
 
+The Natural Wine Store's color palette is vibrant and fresh, creating a modern and welcoming atmosphere while reflecting the essence of natural wines. The selected colors work together to establish a clean, minimalistic look with dynamic accents. Here's a breakdown of the color scheme:
+
+Logo Colors:
+
+* Mint Green (#01BF62)![Placeholder image for colour block](https://placehold.co/15/01BF62/png): A bright, refreshing green that represents the organic and fresh nature of the wine.
+
+* Coral Red (#FF5757)![Placeholder image for colour block](https://placehold.co/15/FF5757/png): A bold and energetic red used to add vibrancy and passion to the brand, reflecting the lively character of natural wines.
+
+Background Colors:
+* Light Grey (#F0F0F0) ![Placeholder image for colour block](https://placehold.co/15/F0F0F0/png) and White (#FFFFFF)![Placeholder image for colour block](https://placehold.co/15/ffffff/png): These neutral tones are used for page backgrounds, providing a clean and minimal canvas that allows the vibrant product imagery and other elements to stand out.
+
+Button Colors:
+* Deep Green (#198753)![Placeholder image for colour block](https://placehold.co/15/198753/png): Used for positive actions such as "Add to Cart" or "Buy Now" buttons, this strong, natural green aligns with the store's organic theme while encouraging action.
+
+* Crimson Red (#DC3444)![Placeholder image for colour block](https://placehold.co/15/dc3444/png): This red is used for negative actions or alerts, such as "Remove" or "Cancel" buttons, ensuring clarity and immediate recognition for the user.
 
 #### Typography
 
+The Natural Wine Store’s typography, centered around Rubik, selected  for its readability and modern style. It's featured in body text, product descriptions, and navigational elements. The geometric and rounded characteristics of Rubik pair well with the color scheme to create a friendly and contemporary aesthetic, that is clean, modern, and approachable.
 
+Button text is styled in Rubik for readability and to ensure clear calls to action. The button text contrasts with the button colors (#198753 and #DC3444) for visual prominence.
+
+Text Sizing and Spacing:
+Body text is set at 16px–18px for optimal legibility, with generous line spacing to ensure comfortable reading across various devices.
+This typography choice, in conjunction with the color palette, creates a seamless user experience that feels both natural and modern.
 
 <a id="data-model"></a>
 
