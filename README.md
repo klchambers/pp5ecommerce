@@ -450,12 +450,6 @@ This issue was solved by assigning retrieving this object and assigning it to a 
 
 ## Development and Deployment
 
-<a id=development></a>
-
-### Development
-
-
-
 <a id=contributing></a>
 
 ### Contributing
@@ -512,6 +506,10 @@ In the project's settings.py file, import your database URL and secret key:
     import env`
 
 `SECRET_KEY = os.environ.get('SECRET_KEY')`
+
+Repeat for other necessary variables, e.g. Stripe API, Cloudinary, Mailchimp
+
+Add these variables to Heroku via the Heroku Dashboard `settings > config vars`
 
 Add `.herokuapp.com` to ALLOWED_HOSTS
 
