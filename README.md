@@ -44,6 +44,44 @@ The program has been deployed to Heroku and can be accessed [here](https://pp5ec
 
 ## User Experience
 
+## Business Model
+### Introduction
+GlouGlou Wine Store is an e-commerce platform designed for wine enthusiasts to explore, select, and purchase wines from different regions, varieties, and categories. The business aims to provide a smooth, customer-focused online shopping experience with curated wine selections, user ratings, and reviews, as well as seamless order management.
+### Value Proposition
+GlouGlou Wine Store offers a user-friendly online platform for wine buyers to:
+* Access a curated catalog of wines, filtered by categories such as region, type, and price.
+* Get detailed product descriptions, images, and product details.
+* Manage their shopping experience with personalised accounts and order details.
+* Benefit from convenient, secure checkout processes using Stripe integration, and receive timely order confirmations.
+### Target Audience
+The target customers for GlouGlou Wine Store are:
+* Wine enthusiasts who enjoy natural wines and diverse wine selections.
+* Casual consumers seeking convenient online wine shopping experiences.
+### Revenue Model
+The primary source of revenue for GlouGlou Wine Store is through product sales:
+* Direct sales of wines: Customers purchase wines directly from the online store.
+Customer Acquisition Channels
+To drive traffic and conversions, GlouGlou Wine Store uses several customer acquisition strategies:
+1. Search Engine Optimization (SEO): Ensuring the store ranks highly on search engines for key terms like "online wine store" or "best wines for delivery."
+2. Social Media Marketing: Engaging customers through platforms like Instagram and Facebook, showcasing wine selections, reviews, and customer testimonials.
+3. Email Marketing: Building a subscriber list for sending out newsletters with special offers, new arrivals, and wine recommendations.
+### Key Resources
+GlouGlou Wine Store relies on several essential resources:
+* Product catalog: A well-curated inventory of high-quality wines from diverse regions.
+* E-commerce platform: Built using technologies like Django for the backend, integrated with payment systems like Stripe for secure transactions.
+* Marketing and branding: A strong brand presence through digital marketing efforts, social media, and engaging with the wine community.
+### Customer Relationship
+GlouGlou Wine Store focuses on building strong relationships with its customers through:
+* Personalised account management: Customers can create profiles to save details, manage orders, and track purchases.
+### Future Growth and Expansion
+GlouGlou Wine Store aims to expand its services by:
+* Offering subscription services: Implementing a monthly wine box delivery based on customer preferences.
+* Add-ons and subscriptions: Customers can opt into special wine bundles, subscription services for regular deliveries, or limited-time seasonal offers.
+* Loyalty programs: Creating loyalty rewards for repeat customers, offering discounts or early access to new products.
+* Product ratings, reviews, and personalised recommendations: Recommend highly rated products, or similar products based on returning customer’s previous order history
+### Conclusion
+The GlouGlou Wine Store business model is centred around delivering a premium wine shopping experience, focusing on customer satisfaction through a curated selection, easy-to-use e-commerce platform, and personalised services. The company has the potential to grow through targeted marketing, strategic partnerships, and the introduction of new features to enhance the customer experience.
+
 <a id="wireframes"></a>
 
 ### Wireframes
@@ -300,7 +338,23 @@ HTML validation of individual pages can be viewed in the drop down boxes below:
 
 ### Bugs and Challenges
 
+* Cloudinary API URL was incorrectly input in the Heroku config variables, resulting in the following error: `ValueError: Must supply api_key`.
+This was amended by double checking API keys stored in env.py for localhost, and config variables in the projects Heroku settings
 
+* A change to Stripe `payment_intent` objects (in a [2022 update](https://docs.stripe.com/changelog/2022-11-15/removes-charges-attribute-paymentintent) they stopped returning a `charges` attribute) resulted in webhooks returning with a 500 server error.
+This issue was solved by assigning retrieving this object and assigning it to a variable as follows: `stripe_charge = stripe.Charge.retrieve(intent.latest_charge)`
+
+* Incorrect configuration of crispy_forms for Bootstrap5 returned TemplateNotFound errors when returning certain views with forms. Make sure that both `django-crispy-forms` and `crispy_bootstrap5` are installed with the following configuration in settings.py:
+
+  *  INSTALLED_APPS = [
+    ...
+    'crispy_forms',
+    'crispy_bootstrap5',
+    ...
+]
+
+      CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+      CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 <a id=development-and-deployment></a>
 
