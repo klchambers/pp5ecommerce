@@ -55,7 +55,7 @@ On the homepage, the visitor is met with a landing hero image, with a tagline an
 
 A distinctive logo at the top of the page lets them know that they are visiting GlouGlou, a webshop specialising in natural and biodynamic wines.
 
-In the navbar, the user can search for products in the search field, register/login/logout through 'my account', enter the shop, view their shopping bag, and signup to the newsletter
+In the navbar, the user can search for products in the search field, register/login/logout through 'my account', enter the shop, view their shopping bag, and signup to the newsletter.
 
 #### Newsletter signup
 
@@ -120,7 +120,7 @@ When proceeding to Checkout, the user sees a summary of products and costs to ch
 
 ![Checkout](/documentation/screencaps/checkout.png)
 
-Once delilvery information and card details are entered, a payment processing overlay displays to give feedback to the user that payment is in process.
+Once delivery information and card details are entered, a payment processing overlay displays to give feedback to the user that payment is in process.
 
 ![Checkout2](/documentation/screencaps/checkout-processing.png)
 
