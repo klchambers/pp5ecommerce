@@ -18,7 +18,7 @@
                         </a>
                         {% else %}
                         <a href="">
-                            <img class="card-img-top img-fluid rounded-2" src="{% static 'images/noimage.png' %}">
+                            <img class="card-img-top img-fluid rounded-2" src="{% static 'images/noimage.png' %}" alt="No Image Available">
                         </a>
                     {% endif %}
                 </div>
@@ -89,7 +89,8 @@
                 </div>
             </div>
         </div>
-        <!-- Delete Confirmation Modal -->
+    </div>
+    <!-- Delete Confirmation Modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

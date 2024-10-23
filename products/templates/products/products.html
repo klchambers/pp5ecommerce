@@ -21,13 +21,23 @@
             <!-- Sidebar Filter -->
             <div class="col-sm-3 col-md-2">
                 <form method="GET" action="/products">
-                    <ul class="collapse d-md-block" id="filterCollapse">
+                    <!-- Filter Collapse Content -->
+                    <div class="collapse d-md-block" id="filterCollapse">
+                        <!-- Sort By Section (Keep as <ul> if you need a list structure here) -->
                         <p><strong>Sort By</strong></p>
-                        <li class="filters"><a class="filter_by" href="?sort=l2h">Price: low to high</a></li>
-                        <li class="filters"><a class="filter_by" href="?sort=h2l">Price: high to low</a></li>
+                        <ul>
+                            <li class="filters"><a class="filter_by" href="?sort=l2h">Price: low to high</a></li>
+                            <li class="filters"><a class="filter_by" href="?sort=h2l">Price: high to low</a></li>
+                        </ul>
+                
+                        <!-- Horizontal Rule (Not inside <ul>) -->
                         <hr>
+                
+                        <!-- Filter Products Section -->
                         <p><strong>Filter Products</strong></p>
                         <p>Style</p>
+                
+                        <!-- Dynamically Generated Categories -->
                         {% for category in categories %}
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="category" value="{{ category.id }}"
@@ -37,22 +47,31 @@
                             </label>
                         </div>
                         {% endfor %}
+                
+                        <!-- Horizontal Rule -->
                         <hr>
-                        <p>Region</p>
+                
+                        <!-- Filter by Region Section -->
+                        <p><strong>Region</strong></p>
+                
+                        <!-- Dynamically Generated Regions -->
                         {% for region in regions %}
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="region" value="{{ region.id }}"
-                                id="region{{ region.id }}" {% if region.id|stringformat:"s" in selected_regions %}
-                                checked {% endif %}>
+                                id="region{{ region.id }}" {% if region.id|stringformat:"s" in selected_regions %} checked {% endif %}>
                             <label for="region{{ region.id }}" class="form-check-label">
                                 {{ region.name }}, {{ region.country }}
                             </label>
                         </div>
                         {% endfor %}
+                
+                        <!-- Horizontal Rule -->
                         <hr>
+                
+                        <!-- Apply and Reset Buttons -->
                         <button class="btn btn-large btn-secondary mb-2">Apply filters</button>
                         <a href="{% url 'products' %}" class="btn btn-large btn-danger">Reset filters</a>
-                    </ul>
+                    </div>
                 </form>
             </div>
 
@@ -115,5 +134,5 @@
                 </div>
             </div>
         </div>
+    </div>
     {% endblock %}
-</div>
