@@ -351,9 +351,10 @@ GlouGlou Wine Store aims to expand its services by:
 * Add-ons and subscriptions: Customers can opt into special wine bundles, subscription services for regular deliveries, or limited-time seasonal offers.
 * Loyalty programs: Creating loyalty rewards for repeat customers, offering discounts or early access to new products.
 * Product ratings, reviews, and personalised recommendations: Recommend highly rated products, or similar products based on returning customer’s previous order history
+* Social Media content marketing, gaining a subscriber list and new customers with social media posts showcasing winemakers, regions, new arrivals and special offers.
 ### Conclusion
 The GlouGlou Wine Store business model is centred around delivering a premium wine shopping experience, focusing on customer satisfaction through a curated selection, easy-to-use e-commerce platform, and personalised services. The company has the potential to grow through targeted marketing, strategic partnerships, and the introduction of new features to enhance the customer experience.
-
+![Social Media Content example](/documentation/pp5marketing.png)
 <a id=testing-and-validation></a>
 
 ## Testing and Validation
