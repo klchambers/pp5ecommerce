@@ -33,8 +33,6 @@ GlouGlou Wine Store is a mobile-first e-commerce web application built with Djan
 
 The project emphasizes responsive design to ensure a smooth user experience across all devices. It provides a seamless registration, shopping, and checkout experience for customers, with intuitive product management for admins. Integration of Stripe ensures secure and simple transactions, and the application is deployed on Heroku making the platform accessible from anywhere.
 
-
-
 <a id=deployed-site></a>
 
 ## Deployed Site
@@ -51,11 +49,70 @@ The program has been deployed to Heroku and can be accessed [here](https://pp5ec
 
 #### Homepage
 
+![GlouGlou Homepage](/documentation/screencaps/homepage.png)
+
+On the homepage, the visitor is met with a landing hero image, with a tagline and prominent button to enter the shop.
+
+A distinctive logo at the top of the page lets them know that they are visiting GlouGlou, a webshop specialising in natural and biodynamic wines.
+
+In the navbar, the user can search for products in the search field, register/login/logout through 'my account', enter the shop, view their shopping bag, and signup to the newsletter
+
+#### Newsletter signup
+
+![Mailchimp form 1](/documentation/screencaps/newsletter1.png)
+
+When 'Newsletter' is selected in the navbar, a modal appears prompting the user to add their email address to subscribe to the GlouGlou newsletter.
+
+The 'Cancel Newsletter Signup' button dismisses the modal with no other action.
+
+By entering their email address and clicking 'subscribe', the user's email address is sent to mailchimp and returns an 'opt-in' confirmation to their inbox
+
+![Mailchimp form 2](/documentation/screencaps/newsletter2.png)
+![Mailchimp signup confirmation](/documentation/screencaps/newsletter-confirm.png)
+
+The user can confirm that they wish to subscribe to the newsletter, they will then be redirected to the homepage, with the below subscription confirmation sent to their inbox. If desired, they can manage their preferences or unsubscribe from the list by pressing the 'Unsubscribe' button.
+
+![Mailchimp verified](/documentation/screencaps/newsletter-verified.png)
+
 #### Product Page
+
+Selecting 'Shop' from the navbar takes the user to the products page, displaying all products.
+
+![Products page](/documentation/screencaps/products.png)
+
+By using the filter/sorts options on the left, they can sort by price (ascending or descending), or filter by region or style. Reset filters resets the page to remove selected filters and show all products.
+
+![Products page filtered](/documentation/screencaps/products-filtered.png)
 
 #### Product Information
 
+Clicking on a wine brings up that wine's product_info page. Here, a high-resolution image of the product is provided, with a product description and other information.
+
+'Wine' object attributes are iterated through and printed if available to give the shopper more information about the region, winemaker, and grape varieties in that particular wine.
+
+![Product info page](/documentation/screencaps/product_info.png)
+
+If the logged in user is a superuser, additional options to edit the product or delete it are made available.
+
+'Edit' calls an edit_product view where fields can be edited, while 'Delete' brings up a modal, through which the user can confirm that they wish to delete the product, or to cancel this operation.
+
+![Product info delete modal](/documentation/screencaps/product_info-delete_modal.png)
+
+The user can add the product (of their chosen quantity) to their bag, or return to the products page via the buttons at the bottom of the page. Toasts are used to inform the user of a successful addition, along with a summary of the contents of their bag.
+
+They can dismiss this toast with the close button in the top-right, or continue to bag and checkout with the 'Go to Checkout' button in the bottom left of the toast.
+
+![Product added toast](/documentation/screencaps/success-toast.png)
+
 #### Shopping Bag
+
+By clicking the 'Go to Checkout' button in the aforementioned toast, or by clicking the bag icon in the navbar, the user is taken to their shopping bag.
+
+This shows a summary of items they have added to their bag, with additional information on each product, along with a subtotal and delivery fees.
+
+![Shopping bag](/documentation/screencaps/shopping-bag.png)
+
+At the bottom of this page they can choose to return to products, or continue to checkout via the buttons at the bottom of the page.
 
 #### Checkout
 
