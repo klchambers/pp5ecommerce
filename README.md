@@ -628,6 +628,7 @@ Follow the instructions in your terminal to create your superuser account userna
 * [**Stripe**](https://stripe.com/ie): Payment gateway
 * [**Django Crispy Forms**](https://django-crispy-forms.readthedocs.io/en/latest/): Form rendering
 * [**Gmail**](https://developers.google.com/gmail/imap/imap-smtp): SMTP server for email
+* [**Mailchimp**](https://mailchimp.com/): Email marketing, embedded form for newsletter signup
 
 <a id=acknowledgements></a>
 
