@@ -143,11 +143,21 @@ def edit_product(request, product_id):
 @login_required
 def delete_product(request, product_id):
     """Delete a product from the store"""
+    # Bag from session storage
+    bag = request.session.get('bag', {})
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only superadmin can do that!')
         return redirect(reverse('home'))
-
-    product = get_object_or_404(Wine, pk=product_id)
-    product.delete()
-    messages.success(request, 'Product deleted!')
-    return redirect(reverse('products'))
+    # Check if product is in bag and display error message
+    if str(product_id) in bag:
+        messages.error(
+            request,
+            '''Item cannot be deleted as it is in your bag.
+            Please remove the item and try again.''')
+        return redirect(reverse('view_bag'))
+    # Deleting the product and returning to products page
+    else:
+        product = get_object_or_404(Wine, pk=product_id)
+        product.delete()
+        messages.success(request, 'Product deleted!')
+        return redirect(reverse('products'))
