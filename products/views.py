@@ -86,12 +86,14 @@ def add_product(request):
     """
     Add a product to the store
     """
+    # Check if user is superuser and prevent them from accessing view if not
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only superadmin can do that!')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
+        # Saving valid product submission
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Successfully added product!')
@@ -113,6 +115,8 @@ def add_product(request):
 @login_required
 def edit_product(request, product_id):
     """ Edit a product in the store """
+    # Check if user is superuser and if not prevent them accessing view
+    # and return them to homepage
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only superadmin can do that!')
         return redirect(reverse('home'))
@@ -120,6 +124,7 @@ def edit_product(request, product_id):
     product = get_object_or_404(Wine, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
+        # Check if form is valid before saving
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated product!')
@@ -145,10 +150,12 @@ def delete_product(request, product_id):
     """Delete a product from the store"""
     # Bag from session storage
     bag = request.session.get('bag', {})
+    # Prevent non-superuser accessing this view
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only superadmin can do that!')
         return redirect(reverse('home'))
     # Check if product is in bag and display error message
+    # Return user to view_bag to remove item from bag
     if str(product_id) in bag:
         messages.error(
             request,
