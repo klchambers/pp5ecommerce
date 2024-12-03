@@ -4,7 +4,7 @@ from .models import BlogPost
 
 # Create your views here.
 def blog(request):
-    posts = BlogPost.objects.all().order_by('-posted_on')
+    posts = BlogPost.objects.filter(status=1).order_by('-posted_on')
     return render(request, 'blog/blog.html', {'posts': posts})
 
 
