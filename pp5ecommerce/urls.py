@@ -29,6 +29,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
+    path('blog/', include('blog.urls')),
     # Serve robots.txt
     path('robots.txt', TemplateView.as_view(
         template_name="robots.txt", content_type='text/plain')),
