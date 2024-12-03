@@ -509,6 +509,8 @@ This issue was solved by assigning retrieving this object and assigning it to a 
       CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
       CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+* If an admin added an item to their bag, and then deleted the product that they added to their bag, a 500 error would occur as the object no longer existed. This was addressed by getting the bag from session storage and checking if the product ID to be deleted was in the bag when the delete_product view is called. If the product is in the admin's bag and they try to delete the product, they are now redirected to their shopping bag and a modal appears advising them that the product they are trying to delete cannot be deleted until they remove the item from their bag and try again.
+
 <a id=development-and-deployment></a>
 
 ## Development and Deployment
