@@ -9,16 +9,19 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
-                {% if "placeholder" in recipe.featured_image.url %}
-                <img class="card-img-top img-fluid rounded-2" src="{% static 'images/placeholder.jpg' %}" alt="placeholder image" style="width: 100%; height: auto;">
-                {% else %}
                 <img class="card-img-top img-fluid rounded-2" src="{{ post.featured_image.url }}" alt="{{ recipe.title }}" style="width: 100%; height: auto;">
-                {% endif %}
             </div>
             <div class="col-12 col-md-6 col-lg-6">
                 <h3>{{ post.title }}</h3>
                 <p>Posted by: {{ post.author }} on {{ post.posted_on }}</p>
                 <p>{{ post.post }}</p>
+                <div class="submit-button text-right mt-5 mb-2">
+                    <a href="{% url 'blog' %}" class="btn btn-secondary">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="font-weight-bold">Return to Blog</span>
+                    </a>
             </div>
         </div>
     </div>

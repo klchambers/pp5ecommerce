@@ -12,7 +12,7 @@ class BlogPost(models.Model):
     slug = models.CharField(max_length=254, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE)
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField('image', blank=True)
     post = models.TextField()
     posted_on = models.DateField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
