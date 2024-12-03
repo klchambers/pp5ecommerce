@@ -39,3 +39,4 @@ urlpatterns = [
 
 # Set custom 404 handler to the project-level views
 handler404 = 'pp5ecommerce.views.custom_404'
+handler500 = 'pp5ecommerce.views.custom_500'
