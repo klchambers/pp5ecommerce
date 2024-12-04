@@ -14,9 +14,10 @@
         <!-- Display Answered FAQs -->
         <div class="mt-4">
             <ul class="list-group">
-                {% for faq in answered_faqs %}
+                {% for faq in published_faqs %}
                     <li class="list-group-item">
-                        <strong>Q:</strong> {{ faq.question }}<br>
+                        <strong>Q:</strong> <em>{{ faq.question }}</em>
+                        <br><br>
                         <strong>A:</strong> {{ faq.answer }}
                     </li>
                 {% empty %}

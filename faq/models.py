@@ -14,3 +14,6 @@ class Faq(models.Model):
         null=True,
         blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
+
+    def __str__(self):
+        return f"'{self.question}' asked by {self.user}"
