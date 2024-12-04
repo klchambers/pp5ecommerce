@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import Faq
 from .forms import FaqForm
 
@@ -20,7 +21,15 @@ def faq_list(request):
             new_faq.save()
 
             # redirect back to the FAQ page
-            return redirect('faq')
+            messages.success(
+                request,
+                "Thank you for submitting your question!")
+            return redirect(request.path)
+
+        else:
+            messages.error(
+                request,
+                "Error, please double check your question form and try again")
 
     template = 'faq/faq.html'
     context = {

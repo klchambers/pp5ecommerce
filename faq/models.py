@@ -8,7 +8,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Faq(models.Model):
     question = models.CharField(max_length=254)
     answer = models.TextField(blank=True)
-    user = models.OneToOneField(
+    user = models.ForeignKey(
         User,
         on_delete=models.SET_NULL,
         null=True,
