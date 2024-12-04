@@ -9,10 +9,12 @@
 {% block content %}
 <div class="overlay"></div>
     <div class="container-fluid">
-        <h1>Frequently Asked Questions</h1>
+        <div class="row">
+            <div class="col-md-6">
         
         <!-- Display Answered FAQs -->
         <div class="mt-4">
+            <h2>Frequently Asked Questions</h2>
             <ul class="list-group">
                 {% for faq in published_faqs %}
                     <li class="list-group-item">
@@ -25,6 +27,8 @@
                 {% endfor %}
             </ul>
         </div>
+            </div>
+            <div class="col-md-6">
 
         <!-- Question Submission Form -->
         {% if user.is_authenticated %}
@@ -41,6 +45,8 @@
                 Please <a href="{% url 'account_login' %}">log in</a> to submit a question.
             </div>
         {% endif %}
+    </div>
+        </div>
     </div>
 </div>
 {% endblock %}
