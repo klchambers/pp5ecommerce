@@ -101,7 +101,7 @@
             <li class="nav-item">
               <a class="nav-link text-center text-secondary pt-4 pb-0" href="{% url 'products' %}">
                 <i class="fas fa-wine-bottle fa-lg d-none d-md-block"></i>
-                <p class="pt-2">Shop</p>
+                <p class="pt-md-2">Shop</p>
               </a>
             </li>
 
@@ -109,7 +109,7 @@
             <li class="nav-item">
               <a class="nav-link text-center text-secondary pt-4 pb-0" href="{% url 'blog' %}">
                 <i class="fas fa-book-bookmark fa-lg d-none d-md-block"></i>
-                <p class="pt-2">Blog</p>
+                <p class="pt-md-2">Blog</p>
               </a>
             </li>
 
@@ -117,7 +117,7 @@
             <li class="nav-item">
               <a class="nav-link text-center text-secondary pt-4 pb-0" href="#" data-bs-toggle="modal" data-bs-target="#newsletterModal">
                 <i class="fas fa-envelope fa-lg d-none d-md-block"></i>
-                <p class="pt-2">Newsletter</p>
+                <p class="pt-md-2">Newsletter</p>
               </a>
             </li>
 
@@ -125,7 +125,7 @@
             <li class="nav-item">
               <a class="nav-link text-center text-secondary pt-4 pb-0" href="{% url 'faq' %}">
                 <i class="fas fa-question fa-lg d-none d-md-block"></i>
-                <p class="pt-2">FAQs</p>
+                <p class="pt-md-2">FAQs</p>
               </a>
             </li>
 
@@ -134,7 +134,7 @@
               <a class="nav-link text-center text-secondary pt-4 pb-0" href="#" id="user-options" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-user fa-lg d-none d-md-block"></i>
-                <p class="pt-2">My Account</p>
+                <p class="pt-md-2">My Account</p>
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
@@ -155,7 +155,7 @@
               <a class="nav-link pt-4 pb-0 text-center {% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %}"
                 href="{% url 'view_bag' %}">
                 <i class="fas fa-shopping-bag fa-lg d-none d-md-block"></i>
-                <p class="pt-2">
+                <p class="pt-md-2 pb-5 pb-md-0">
                   {% if grand_total %}
                   €{{ total|floatformat:2 }}
                   {% else %}
