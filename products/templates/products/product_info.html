@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="GlouGlou Natural Wine Store | {{ product.friendly_name }}, {{ product.winemaker }}">
+  <meta name="keywords" content="Natural Wine, Minimum Intervention Wine, Organic, Biodynamic, Natural Wine Store, {{ product.friendly_name }}, {{ product.winemaker }}">
+{% endblock %}
+
 {%block extra_title%}{{ product.friendly_name }} | GlouGlou Natural Wine{% endblock %}  <!-- Dynamic title -->
 
 {% block page_header %}
