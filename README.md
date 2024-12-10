@@ -164,6 +164,12 @@ Here a superuser can create new products, with Cloudinary image field submission
 
 ![Add Product Admin Screenshots](/documentation/screencaps/product-management-add_product.png)
 
+#### Blog
+
+
+
+#### FAQs
+
 <hr>
 
 <a id="wireframes"></a>
@@ -509,7 +515,11 @@ This issue was solved by assigning retrieving this object and assigning it to a 
       CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
       CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-* If an admin added an item to their bag, and then deleted the product that they added to their bag, a 500 error would occur as the object no longer existed. This was addressed by getting the bag from session storage and checking if the product ID to be deleted was in the bag when the delete_product view is called. If the product is in the admin's bag and they try to delete the product, they are now redirected to their shopping bag and a modal appears advising them that the product they are trying to delete cannot be deleted until they remove the item from their bag and try again.
+* If an admin added an item to their bag and then deleted the product from the database, a 500 Internal Server Error would occur because the object no longer existed.
+
+  This issue was addressed in two ways:
+  * In the delete_product view: The session bag is checked to see if the product ID exists. If the admin attempts to delete a product that is in their bag, they are redirected to the shopping bag page. A modal informs them that they need to remove the item from their bag before deleting the product.
+  * In bag_contents() (bag/contexts.py): A try/except block handles missing products. If a product in the session bag has been deleted from the database, the product ID is removed from the session bag. The user is notified with an error message stating that the item was removed from their bag.
 
 <a id=development-and-deployment></a>
 
