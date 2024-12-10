@@ -641,6 +641,8 @@ Follow the instructions in your terminal to create your superuser account userna
 * [**Django Crispy Forms**](https://django-crispy-forms.readthedocs.io/en/latest/): Form rendering
 * [**Gmail**](https://developers.google.com/gmail/imap/imap-smtp): SMTP server for email
 * [**Mailchimp**](https://mailchimp.com/): Email marketing, embedded form for newsletter signup
+* [**Django-Extensions**](https://django-extensions.readthedocs.io/en/latest/): Provides additional management commands and model utilities  
+* [**pydotplus**](https://pydotplus.readthedocs.io/): Python interface to Graphviz used to generate entity relationship diagrams (ERDs)  
 
 <a id=acknowledgements></a>
 
