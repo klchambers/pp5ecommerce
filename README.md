@@ -651,14 +651,16 @@ Follow the instructions in your terminal to create your superuser account userna
 
 * Guidance from Code Institute mentor Brian O'Hare has been invaluable throughout the stages of this project's inception and development.
 
-* Homepage landing [image](https://www.pexels.com/photo/wine-glass-bottle-87224/) by [Timur Saglambilek](https://www.pexels.com/@marketingtuig/) on [Pexels](https://www.pexels.com/)
+* Homepage landing [image](https://www.pexels.com/photo/wine-glass-bottle-87224/) by [Timur Saglambilek](https://www.pexels.com/@marketingtuig/) on [Pexels](https://www.pexels.com/).
 
-* Product photos author's own
+* Product photos author's own.
 
-* Use of Slugify to generate and save slugs adapted from code posted by [Ikechukwu Henry Odoh](https://stackoverflow.com/users/2261257/ikechukwu-henry-odoh) in [this](https://stackoverflow.com/questions/50436658/how-to-auto-generate-slug-from-my-album-model-in-django-2-0-4) Stack Overflow thread
+* Use of Slugify to generate and save slugs adapted from code posted by [Ikechukwu Henry Odoh](https://stackoverflow.com/users/2261257/ikechukwu-henry-odoh) in [this](https://stackoverflow.com/questions/50436658/how-to-auto-generate-slug-from-my-album-model-in-django-2-0-4) Stack Overflow thread.
 
-* Sort By price adapted from code posted by [Prakhar](https://stackoverflow.com/users/14264497/prakhar) in [this](https://stackoverflow.com/questions/68604759/how-to-sort-product-by-price-low-to-high-and-high-to-low-in-django-with-fillters) Stack Overflow thread
+* Sort By price adapted from code posted by [Prakhar](https://stackoverflow.com/users/14264497/prakhar) in [this](https://stackoverflow.com/questions/68604759/how-to-sort-product-by-price-low-to-high-and-high-to-low-in-django-with-fillters) Stack Overflow thread.
 
-* Product descriptions By Len Ahern & L'Atitude 51, Cork
+* post_save() signal in faq/signals.py adapted from code posted by [Del Margaret](https://dnmtechs.com/author/del_margaret_1154/) in [this](https://dnmtechs.com/django-post_save-signal-implementation-in-python-3-programming/) blog post.
 
-* [Rubik](https://fonts.google.com/specimen/Rubik) font by [Hubert & Fischer](https://hfs-studio.com/about/) used for site body content
+* Product descriptions By Len Ahern & L'Atitude 51, Cork.
+
+* [Rubik](https://fonts.google.com/specimen/Rubik) font by [Hubert & Fischer](https://hfs-studio.com/about/) used for site body content.
