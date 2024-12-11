@@ -663,4 +663,6 @@ Follow the instructions in your terminal to create your superuser account userna
 
 * Product descriptions By Len Ahern & L'Atitude 51, Cork.
 
+* Featured image for the blog post [Exploring Natural Wine in the Jura: A Journey to Authenticity](https://pp5ecommerce-a72d5065ca06.herokuapp.com/blog/post/2) courtesy of [france-voyage.com](https://www.france-voyage.com/travel-photos/jura-vineyards-1402.htm).
+
 * [Rubik](https://fonts.google.com/specimen/Rubik) font by [Hubert & Fischer](https://hfs-studio.com/about/) used for site body content.
