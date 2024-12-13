@@ -467,8 +467,8 @@ An error returned while validating product_info.html. On closer inspection this 
 <details>
 <summary>Checkout</summary>
 <br>
-An error was reported on the page source for /checkout.html relating to the use of placeholder text for the 'Country' field, as well as a warning for an Empty h1 tag.
-It was deemed appropriate to keep these as is, as the placeholder text provides important information to the user relating to a mandatory field, and the empty h1 tag is for a decorative spinner appearing on the payment processing overlay.
+An warning was reported on the page source for /checkout.html for an Empty h1 tag.
+It was deemed appropriate to keep this as is as the empty h1 tag is for a decorative spinner appearing on the payment processing overlay.
 <img src='documentation/validation-screenshots/checkout-validation.png'>
 </details>
 
