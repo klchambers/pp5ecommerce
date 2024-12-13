@@ -454,8 +454,6 @@ HTML validation of individual pages can be viewed in the drop down boxes below:
 <summary>Product Info</summary>
 <br>
 <img src='documentation/validation-screenshots/product-info-validation.png'>
-An error returned while validating product_info.html. On closer inspection this appears to stem from formatted text rendered by the Summernote textfield used for formatting product descriptions
-<img src='documentation/validation-screenshots/product-info-validation-2.png'>
 </details>
 
 <details>
@@ -476,6 +474,24 @@ It was deemed appropriate to keep this as is as the empty h1 tag is for a decora
 <summary>User Profile</summary>
 <br>
 <img src='documentation/validation-screenshots/profile-validation.png'>
+</details>
+
+<details>
+<summary>Blog</summary>
+<br>
+<img src='documentation/validation-screenshots/blog-validation.png'>
+</details>
+
+<details>
+<summary>Blog Post</summary>
+<br>
+<img src='documentation/validation-screenshots/blog-post-validation.png'>
+</details>
+
+<details>
+<summary>FAQs</summary>
+<br>
+<img src='documentation/validation-screenshots/faq-validation.png'>
 </details>
 
 #### CSS
