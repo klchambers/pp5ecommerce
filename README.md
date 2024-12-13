@@ -166,25 +166,40 @@ Here a superuser can create new products, with Cloudinary image field submission
 
 #### Blog
 
+Clicking the 'blog' button in the navbar directs the user to a list of published blog posts. Some blog post details (25 word summary, post date, title, and author) are provided as well as a featured image for illustative purposes
 
+![Blog List Screenshot](/documentation/screencaps/blog_list.png)
+
+Clicking the 'Read Post' beneath an article takes the user to the full blog post. At the end of the post is a convenient 'Return to Blog' button to allow the user to easily navigate back to the full list of blog posts.
+
+![Blog Post Screenshot](/documentation/screencaps/blog_post.png)
+![End of Blog Post Screenshot](/documentation/screencaps/blog_post_end.png)
+
+Through the admin panel, site staff can view and published and draft blog posts.
+
+![Blog Post Admin Screenshot](/documentation/screencaps/blog_admin_1.png)
+
+Editing or creating a blog post allows the site admin to input a title, author, and blog content, and upload featured image (hosted via Cloudinary). 'Status' is 'Draft' by default, and blog posts are only visible to visitors to the site when they are set to 'Published' and saved.
+
+![Blog Post Admin Screenshot](/documentation/screencaps/blog_admin_2.png)
 
 #### FAQs
 
 The FAQ page displays published questions and answers along the left-hand side. Logged in users are able to submit a question (with a 254 character limit). Users who are not logged in/authenticated are informed that they must be logged in in order to submit a question
 
-![Add Product Admin Screenshots](/documentation/screencaps/faq.png)
+![FAQs Page Screenshot](/documentation/screencaps/faq.png)
 
 When a new question is submitted, all admins are notified via email to their registered email address. They are prompted to access the site's admin panel to respond or to answer the user directly via the user's email address.
 
-![Add Product Admin Screenshots](/documentation/screencaps/new_question_email.png)
+![Admin New Question Notification Email Screenshot](/documentation/screencaps/new_question_email.png)
 
 In the admin panel, site staff can view questions, input their answer in the 'answer field, and select 'publish' before saving. This sets the 'status' Boolean to 1 (published) and displays the question and answer on the FAQs page.
 
-![Add Product Admin Screenshots](/documentation/screencaps/publish_answered_question.png)
+![Answer Submitted Question Admin Screenshot](/documentation/screencaps/publish_answered_question.png)
 
 When the question is answered and published to FAQs, the user who submitted this question is notified via email and directed to the FAQs page via the link as shown below.
 
-![Add Product Admin Screenshots](/documentation/screencaps/answer_notification_email.png)
+![User Question Answered Email Notification Screenshot](/documentation/screencaps/answer_notification_email.png)
 
 <hr>
 
