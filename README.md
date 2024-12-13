@@ -55,7 +55,7 @@ On the homepage, the visitor is met with a landing hero image, with a tagline an
 
 A distinctive logo at the top of the page lets them know that they are visiting GlouGlou, a webshop specialising in natural and biodynamic wines.
 
-In the navbar, the user can search for products in the search field, register/login/logout through 'my account', enter the shop, view their shopping bag, and signup to the newsletter.
+In the navbar, the user can search for products in the search field, register/login/logout through 'my account', enter the shop, view their shopping bag, go to the blog, FAQs, or signup to the newsletter.
 
 If logged out, the user can log in or register for an account via the buttons in the 'My Account' drop down menu.
 
@@ -169,6 +169,22 @@ Here a superuser can create new products, with Cloudinary image field submission
 
 
 #### FAQs
+
+The FAQ page displays published questions and answers along the left-hand side. Logged in users are able to submit a question (with a 254 character limit). Users who are not logged in/authenticated are informed that they must be logged in in order to submit a question
+
+![Add Product Admin Screenshots](/documentation/screencaps/faq.png)
+
+When a new question is submitted, all admins are notified via email to their registered email address. They are prompted to access the site's admin panel to respond or to answer the user directly via the user's email address.
+
+![Add Product Admin Screenshots](/documentation/screencaps/new_question_email.png)
+
+In the admin panel, site staff can view questions, input their answer in the 'answer field, and select 'publish' before saving. This sets the 'status' Boolean to 1 (published) and displays the question and answer on the FAQs page.
+
+![Add Product Admin Screenshots](/documentation/screencaps/publish_answered_question.png)
+
+When the question is answered and published to FAQs, the user who submitted this question is notified via email and directed to the FAQs page via the link as shown below.
+
+![Add Product Admin Screenshots](/documentation/screencaps/answer_notification_email.png)
 
 <hr>
 
