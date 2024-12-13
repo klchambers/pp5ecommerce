@@ -459,6 +459,12 @@ An error returned while validating product_info.html. On closer inspection this 
 </details>
 
 <details>
+<summary>Bag</summary>
+<br>
+<img src='documentation/validation-screenshots/bag-validation.png'>
+</details>
+
+<details>
 <summary>Checkout</summary>
 <br>
 An error was reported on the page source for /checkout.html relating to the use of placeholder text for the 'Country' field, as well as a warning for an Empty h1 tag.
