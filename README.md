@@ -383,6 +383,10 @@ Each section below relates to a specific Django App. Nested within are summaries
 
 * Category: Many-to-Many with Wine.
 
+* BlogPost: Foreign Key to User.
+
+* Faq: Foreign Key to User
+
 <a id=epics-and-user-stories></a>
 
 ## Epics and User Stories
