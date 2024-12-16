@@ -175,13 +175,13 @@ Clicking the 'Read Post' beneath an article takes the user to the full blog post
 ![Blog Post Screenshot](/documentation/screencaps/blog_post.png)
 ![End of Blog Post Screenshot](/documentation/screencaps/blog_post_end.png)
 
-Through the admin panel, site staff can view and published and draft blog posts.
+Through the admin panel, site staff can view and edit published and draft blog posts.
 
 ![Blog Post Admin Screenshot](/documentation/screencaps/blog_admin_1.png)
 
 Editing or creating a blog post allows the site admin to input a title, author, and blog content, and upload featured image (hosted via Cloudinary). 'Status' is 'Draft' by default, and blog posts are only visible to visitors to the site when they are set to 'Published' and saved.
 
-![Blog Post Admin Screenshot](/documentation/screencaps/blog_admin_2.png)
+![Blog Post Admin Screenshot #2](/documentation/screencaps/blog_admin_2.png)
 
 #### FAQs
 
@@ -265,59 +265,106 @@ This Entity-Relationship Diagram (ERD) provides a visual representation of the k
 
 **Main Entities and Relationships**
 
+
 <details><summary>User</summary>
 
 1. Represents the system's registered users.
-1. Each user has one associated UserProfile.
-1. Users can place multiple Orders.
+2. Each user has one associated UserProfile.
+3. Users can place multiple Orders.
+4. Uses the default Django user model.
+
 </details>
 
-<details><summary>UserProfile</summary>
+Each section below relates to a specific Django App. Nested within are summaries of each model:
 
-1. Extends the default User model with additional fields for storing delivery information and order history.
-1. Maintains default delivery information like phone number, address, city, and country.
-1. One-to-One relationship with the User model, meaning each user has exactly one profile, and each profile belongs to one user.
+<details><summary>Profiles App</summary>
+
+  **UserProfile**
+
+  1. Extends the default User model with additional fields for storing delivery information and order history.
+  2. Maintains default delivery information like phone number, address, city, and country.
+  3. One-to-One relationship with the User model, meaning each user has exactly one profile, and each profile belongs to one user.
+
 </details>
 
-<details><summary>Product</summary>
+<details><summary>Products App</summary>
 
-1. Represents individual products available for purchase.
-1. Products are referenced in OrderLineItems when included in an order.
+  **Product**
+
+  1. Represents individual products available for purchase.
+  2. Products are referenced in OrderLineItems when included in an order.
+
+  **Category**
+
+  1. Represents the different types of wine categories, such as Red, White, or Sparkling.
+  2. Many-to-Many relationship with Wine, meaning a wine can belong to multiple categories, and a category can have multiple wines.
+
+  
+  **Region**
+
+  1. Represents geographical wine-producing regions, such as Alsace, France or Piedmont, Italy.
+  2. One-to-Many relationship with the Wine model, where a region can produce multiple wines.
+
+  **Wine**
+  1. Represents individual wines available for purchase.
+  2. Linked to Region via a ForeignKey, meaning each wine is produced in one region.
+  3. Linked to Category via a ManyToManyField, meaning each wine can belong to multiple categories (e.g., Red, Sparkling).
+
 </details>
 
-<details><summary>Order</summary>
+<details><summary>Checkout</summary>
+ 
+**Order**
 
 1. Stores details about an order placed by a user.
-1. Includes delivery information such as the full name, phone number, address, and country.
-1. Contains details like the total cost of the order and delivery charges.
-1. One-to-Many relationship with OrderLineItem, meaning each order can contain multiple products (line items).
-</details>
+2. Includes delivery information such as the full name, phone number, address, and country.
+3. Contains details like the total cost of the order and delivery charges.
+4. One-to-Many relationship with OrderLineItem, meaning each order can contain multiple products (line items).
 
-<details><summary>OrderLineItem</summary>
+
+
+**OrderLineItem**
 
 1. Represents a specific product within an order.
-1. Each OrderLineItem belongs to one Order.
-1. Contains details about the product, quantity, and the total cost for that item.
+2. Each OrderLineItem belongs to one Order.
+3. Contains details about the product, quantity, and the total cost for that item.
+
 </details>
 
-<details><summary>Region</summary>
 
-1. Represents geographical wine-producing regions, such as Alsace, France or Piedmont, Italy.
-1. One-to-Many relationship with the Wine model, where a region can produce multiple wines.
+<details><summary>Faq</summary>
+
+**Faq**
+
+1. Represents a question and associated answer.
+2. Foreign key to the User who submitted the question.
+3. Question can exist without an answer (e.g. when first submitted bbut not yet answered or published).
+4. Status is set to Draft by default. When an admin answers and changes the status to Published to post the question to the FAQ page, the User is notified via email.
+
 </details>
 
-<details><summary>Wine</summary>
+<details><summary>Blog</summary>
 
-1. Represents individual wines available for purchase.
-1. Linked to Region via a ForeignKey, meaning each wine is produced in one region.
-1. Linked to Category via a ManyToManyField, meaning each wine can belong to multiple categories (e.g., Red, Sparkling).
+**BlogPost**
+
+- **`title`**: 
+  - A unique `CharField` for the blog post title. 
+  - Maximum length: 254 characters.
+- **`author`**: 
+  - A `ForeignKey` linking to the `User` model. 
+  - Deletion behavior: Associated blog posts are deleted if the user is deleted (`on_delete=models.CASCADE`).
+- **`featured_image`**: 
+  - An optional image field powered by Cloudinary (`CloudinaryField`) for storing a featured image.
+- **`post`**: 
+  - A `TextField` for the main content of the blog post.
+- **`posted_on`**: 
+  - A `DateField` that automatically sets the date when the post is created (`auto_now_add=True`).
+- **`status`**: 
+  - An `IntegerField` with choices defined by a `STATUS` variable. 
+  - Default value: `0`.
+
 </details>
 
-<details><summary>Category</summary>
-
-1. Represents the different types of wine categories, such as Red, White, or Sparkling.
-1. Many-to-Many relationship with Wine, meaning a wine can belong to multiple categories, and a category can have multiple wines.
-</details>
 <br>
 
 **Relationships Summary**
@@ -598,7 +645,7 @@ To contribute, make a pull request from the [project repository](https://github.
 * Heroku Account: Ensure you have an active Heroku account. You can sign up at Heroku.
 * Heroku CLI: Install the Heroku Command Line Interface (CLI) on your local machine. Instructions for installation can be found here.
 * Git: Ensure Git is installed and configured on your local machine. Instructions for installation can be found here.
-* PostgreSQL Database: The application uses a PostgreSQL database. You can use Heroku's PostgreSQL add-on or an external provider like Neon.
+* PostgreSQL Database: The application uses a PostgreSQL database. You can use Heroku's PostgreSQL add-on or an external provider such as [Neon](https://console.neon.tech/).
 
 #### Steps to Deploy
 
