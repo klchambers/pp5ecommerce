@@ -53,7 +53,8 @@ def faq_list(request):
             # redirect back to the FAQ page
             messages.success(
                 request,
-                "Thank you for submitting your question!")
+                '''Thank you for your submission!\n
+                You'll get an email when we have answered your question.''')
             return redirect(request.path)
 
         else:
