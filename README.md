@@ -31,7 +31,7 @@
 
 GlouGlou Wine Store is a mobile-first e-commerce web application built with Django for a natural wine webshop.
 
-The project emphasizes responsive design to ensure a smooth user experience across all devices. It provides a seamless registration, shopping, and checkout experience for customers, with intuitive product management for admins. Integration of Stripe ensures secure and simple transactions, and the application is deployed on Heroku making the platform accessible from anywhere.
+The project emphasises responsive design to ensure a smooth user experience across all devices. It provides a seamless registration, shopping, and checkout experience for customers, with intuitive product management for admins. Integration of Stripe ensures secure and simple transactions, and the application is deployed on Heroku making the platform accessible from anywhere.
 
 <a id=deployed-site></a>
 
@@ -63,7 +63,7 @@ When registering for an account, a confirmation email will be sent to the email 
 
 Please note that the initial email may be directed to your spam folder. This can happen due to several factors:
 
-- New Sender Recognition: If this is the first time you are receiving an email from GlouGlou, your email provider might not immediately recognize it as safe.
+- New Sender Recognition: If this is the first time you are receiving an email from GlouGlou, your email provider might not immediately recognise it as safe.
 - Email Filtering: Gmail and other providers have advanced spam detection systems that may mistakenly flag the confirmation email as unsolicited, especially if it's sent from an automated system.
 - First-Time Communication: As the first email from our domain, the provider may treat it more cautiously, categorizing it as spam.
 To ensure you receive the confirmation and future emails, please check your spam folder, and mark the email as 'Not Spam,'.
@@ -656,86 +656,136 @@ To contribute, make a pull request from the [project repository](https://github.
 
 #### Prerequisites
 * Heroku Account: Ensure you have an active Heroku account. You can sign up at Heroku.
-* Heroku CLI: Install the Heroku Command Line Interface (CLI) on your local machine. Instructions for installation can be found here.
+* Stripe Account: 
 * Git: Ensure Git is installed and configured on your local machine. Instructions for installation can be found here.
 * PostgreSQL Database: The application uses a PostgreSQL database. You can use Heroku's PostgreSQL add-on or an external provider such as [Neon](https://console.neon.tech/).
 
 #### Steps to Deploy
 
-1. Clone the Repository
+## Deployment
 
-`git clone https://github.com/klchambers/pp5ecommerce.git`
+### Clone GitHub Repository
 
-`cd pp5ecommerce`
+1. Sign into GitHub and go to the the GitHub repository you would like to clone
+1. Click the `Code` button in the top right hand side of the Repo page
+1. Copy the URL to clone via HTTPS
+1. Open your terminal and navigate to the directory you want to create the cloned repository in
+1. Type git clone and paste the URL you copied in step 4.
+    ``` $ git clone https://github.com/your-username/your-repository```
+1. Press enter. Your local copy of the repository will be created
 
-2. Create a Virtual Environment and Install Dependencies
 
-`python -m venv venv`
+To install the dependencies run the following command in the terminal:
+`pip3 install -r requirements.txt`
 
-`source venv/bin/activate`, or on Windows use `venv\Scripts\activate`
+Configure your env.py file with the following constants (ensure that this file is listed in `.gitignore` file at the project's root level to avoid pushing it to your repository)
+```
+import os
 
-`pip install -r requirements.txt`
+os.environ.setdefault(
+    'DATABASE_URL',
+    '<Database URL>'
+)
 
-3. Set Up Environment Variables
+os.environ.setdefault(
+    'SECRET_KEY', '<Secret Key>>'
+)
 
-Create an env.py file in the root directory and add the following environment variables:
+os.environ.setdefault(
+    "CLOUDINARY_URL", "<Cloudinary URL>")
 
-`import os`
+os.environ.setdefault(
+    'STRIPE_PUBLIC_KEY', '<Stripe Public Key>>'
+)
 
-`os.environ.setdefault('DATABASE_URL', <your_database_url>)`
+os.environ.setdefault(
+    'STRIPE_SECRET_KEY', '<Stripe Secret Key>'
+)
 
-`os.environ.setdefault('SECRET_KEY', <your_database_url>)`
+os.environ.setdefault(
+    'STRIPE_WH_SECRET', '<Secret Key for Stripe Webhooks>'
+)
 
-(note: Add .env.py/env.py to .gitignore and save before pushing your code to Github. This will prevent sensitive information from being made publicly available)
+os.environ.setdefault(
+    'EMAIL_HOST_PASS', '<Host Pass from Gmail>'
+)
 
-In the project's settings.py file, import your database URL and secret key:
+os.environ.setdefault(
+    'EMAIL_HOST_USER', '<Host Email Address from Gmail>'
+)
 
-`if os.path.isfile('env.py'):
-    import env`
+```
 
-`SECRET_KEY = os.environ.get('SECRET_KEY')`
 
-Repeat for other necessary variables, e.g. Stripe API, Cloudinary, Mailchimp
+*Make migrations and setup initial database operations*
 
-Add these variables to Heroku via the Heroku Dashboard `settings > config vars`
+In the root directory from your terminal (ensure that your virtual environment is active, if using) run `python3 manage.py makemigrations`
+then `python3 manage.py migrate`
 
-Add `.herokuapp.com` to ALLOWED_HOSTS
+*Create a superuser for the project*
 
-4. Prepare Static Assets
+Run `python3 manage.py createsupreruser` and follow the steps to create a superuser for your Django project
 
-`python manage.py collectstatic`
+### Deployment on Heroku
 
-5. Initialise a Git Repository
+To deploy on Heroku
 
-`git init`
+  1. Create a Procfile in your project's root directory.
+  1. Log in to the Heroku dashboard and a create a new app.
+  1. Connect Heroku app to your GitHub Repo.
+  1. Configure variables on Heroku (available in the 'Settings' tab) - these should match the constants you have set in your env.py file.
+  1. Add `'.herokuapp.com'` to `ALLOWED_HOSTS` in your projects settings.py file.
+  1. Deploy your Heroku project via the 'Deploy' tab.
 
-`git add .`
 
-`git commit -m "Initial commit"`
+### Cloudinary
 
-6. Create a Heroku App
+Cloudinary is used throughout this project to serve static files. It is included in the project's requirements.txt so will be installed when the command `pip3 install -r requirements.txt` is run.
 
-`heroku create <'your app name'>`
+Ensure that `cloudinary_storage` and `cloudinary` are included in `INSTALLED_APPS` in settings.py if hosted images are not displaying as expected.
 
-7. Deploy to Heroku
+For further information, the Cloudinary documentation is available [here](https://pypi.org/project/cloudinary/).
+  
+### Stripe
 
-`git push heroku main`
+To integrate Stripe for payments, you need to complete several steps to set up and configure it within your application. Follow the instructions below to ensure that your Stripe setup works smoothly:
 
-8. Apply DB migrations
+Steps to Set Up Stripe
 
-`python3 manage.py makemigrations`
+*Create a Stripe Account*
+1. Go to Stripe's website and sign up for an account if you don’t already have one.
+1. After signing in, you will be directed to your dashboard where you can manage your account and settings.
 
-`python3 manage.py migrate`
+*Obtain Stripe API Keys*
 
-9. Create a Superuser
+1. In the Stripe dashboard, navigate to the Developers section.
+Under the API Keys tab, you will find your Public Key and Secret Key.
+1. Copy these keys and add them to your env.py file. The Publishable Key is used on the frontend, while the Secret Key is used on the backend to communicate securely with Stripe.
+1. Update your env.py file with your Stripe keys
 
-`python manage.py createsuperuser`
+### Gmail SMTP Server Configuration
 
-Follow the instructions in your terminal to create your superuser account username and passwords
+To enable email functionality in your Django application using Gmail's SMTP server, follow the steps below. This guide will use an environment-specific approach to toggle between console-based email handling in development and SMTP-based email handling in production.
 
-10. Open the application
+#### Steps to Set Up Gmail SMTP
 
-`heroku open`
+#### 1. Create a Gmail Account
+- If you don't have a Gmail account, you can create one by visiting [Gmail](https://mail.google.com/).
+
+#### 2. Allow Less Secure Apps (For Development Purposes)
+- Gmail requires allowing access to less secure apps to enable your application to send emails. This step is necessary only for development purposes. However, for a more secure approach (especially when your app is in production), you should use OAuth 2.0.
+- To enable less secure apps:
+  - Visit [Allow less secure apps](https://myaccount.google.com/lesssecureapps) and toggle it **ON**.
+- If you have **Two-Factor Authentication (2FA)** enabled, you should use an **App Password** instead of your regular Gmail password. You can generate this from your Google account settings.
+
+#### 3. Gmail SMTP configuration in `settings.py`
+settings.py is configured to take the variables defined in `env.py` for email host, password, and port.
+
+Once you're ready to deploy to a production environment (i.e. Heroku), ensure that the Gmail credentials are securely set in the environment variables. On Heroku, configure the necessary environment variables via Settings > Config Vars for:
+
+```EMAIL_HOST_USER``` and ```EMAIL_HOST_PASS```
+
+Further information on the Gmail SMTP server is available [here](https://support.google.com/a/answer/176600?hl=en).
 
 <a id=technologies-used></a>
 
