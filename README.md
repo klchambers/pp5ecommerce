@@ -628,6 +628,8 @@ This issue was solved by assigning retrieving this object and assigning it to a 
   * In the delete_product view: The session bag is checked to see if the product ID exists. If the admin attempts to delete a product that is in their bag, they are redirected to the shopping bag page. A modal informs them that they need to remove the item from their bag before deleting the product.
   * In bag_contents() (bag/contexts.py): A try/except block handles missing products. If a product in the session bag has been deleted from the database, the product ID is removed from the session bag. The user is notified with an error message stating that the item was removed from their bag.
 
+* Blog post content did not correctly render HTML tags (e.g. if the post started with a `<strong>` tag this would display as `<strong>` rather than as bold text). This was amended by adding the `| safe` filter to the blog_post.html template. More info regarding Django built in filters is available [here](https://docs.djangoproject.com/en/5.1/ref/templates/builtins/).
+
 <a id=development-and-deployment></a>
 
 ## Development and Deployment
