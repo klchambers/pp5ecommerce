@@ -807,6 +807,42 @@ Further information on the Gmail SMTP server is available [here](https://support
 * [**Django-Extensions**](https://django-extensions.readthedocs.io/en/latest/): Provides additional management commands and model utilities  
 * [**pydotplus**](https://pydotplus.readthedocs.io/): Python interface to Graphviz used to generate entity relationship diagrams (ERDs)  
 
+### Dependencies
+
+This project contrains the following dependencies, which are specified in `requirements.txt`:
+| Dependency | Version  |
+|---|---|
+|  asgiref |  3.8.1 |
+|  bleach | 6.1.0 |
+| certifi  | 2024.8.30  |
+|  charset-normalizer | 3.4.0  |
+| cloudinary  |  1.41.0 |
+|  crispy-bootstrap |  2024.10 |
+|  dj-database-url |  2.2.0 |
+|  Django | 4.2.16  |
+|  django-allauth | 65.0.2  |
+|  django-cloudinary-storage |  0.3.0 |
+|  django-countries |  7.2.1 |
+|  django-crispy-forms |  2.3 |
+| django-extensions  | 3.2.3  |
+|  django-summernote |  0.8.20.0 |
+|  gunicorn | 23.0.0  |
+|  idna |  3.1.0 |
+|  packaging | 24.1  |
+| pillow  |  10.4.0 |
+|  psycopg2 |  2.9.9 |
+|  pydotplus |  2.0.2 |
+|  pyparsing |  3.2.0 |
+|  pytz | 2024.2  |
+|  requests |  2.32.3 |
+|  six |  1.16.0 |
+|  sqlparse |  0.5.1 |
+| stripe  |  11.1.1 |
+|  typing_extensions |  4.12.2 |
+|  urllib3 |  1.26.6 |
+|  webencodings | 0.5.1  |
+|  whitenoise | 6.7.0  |
+
 <a id=acknowledgements></a>
 
 ## Acknowledgements
