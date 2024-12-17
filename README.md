@@ -661,15 +661,15 @@ GlouGlou could be enhanced through the development and implementation of the fol
 
 #### Prerequisites
 * Heroku Account: Ensure you have an active Heroku account. You can sign up at Heroku.
-* Stripe Account: 
-* Git: Ensure Git is installed and configured on your local machine. Instructions for installation can be found here.
+* Stripe Account.
+* Git: Ensure Git is installed and configured on your local machine. Instructions for installation can be found [here](https://github.com/git-guides/install-git).
 * PostgreSQL Database: The application uses a PostgreSQL database. You can use Heroku's PostgreSQL add-on or an external provider such as [Neon](https://console.neon.tech/).
-
-#### Steps to Deploy
 
 ## Deployment
 
-### Clone GitHub Repository
+### Steps to Deploy
+
+#### Clone GitHub Repository
 
 1. Sign into GitHub and go to the the GitHub repository you would like to clone
 1. Click the `Code` button in the top right hand side of the Repo page
@@ -731,7 +731,7 @@ then `python3 manage.py migrate`
 
 Run `python3 manage.py createsupreruser` and follow the steps to create a superuser for your Django project
 
-### Deployment on Heroku
+#### Deployment on Heroku
 
 To deploy on Heroku
 
@@ -743,7 +743,7 @@ To deploy on Heroku
   1. Deploy your Heroku project via the 'Deploy' tab.
 
 
-### Cloudinary
+#### Cloudinary
 
 Cloudinary is used throughout this project to serve static files. It is included in the project's requirements.txt so will be installed when the command `pip3 install -r requirements.txt` is run.
 
@@ -751,7 +751,7 @@ Ensure that `cloudinary_storage` and `cloudinary` are included in `INSTALLED_APP
 
 For further information, the Cloudinary documentation is available [here](https://pypi.org/project/cloudinary/).
   
-### Stripe
+#### Stripe
 
 To integrate Stripe for payments, you need to complete several steps to set up and configure it within your application. Follow the instructions below to ensure that your Stripe setup works smoothly:
 
@@ -768,7 +768,7 @@ Under the API Keys tab, you will find your Public Key and Secret Key.
 1. Copy these keys and add them to your env.py file. The Publishable Key is used on the frontend, while the Secret Key is used on the backend to communicate securely with Stripe.
 1. Update your env.py file with your Stripe keys
 
-### Gmail SMTP Server Configuration
+#### Gmail SMTP Server Configuration
 
 To enable email functionality in your Django application using Gmail's SMTP server, follow the steps below. This guide will use an environment-specific approach to toggle between console-based email handling in development and SMTP-based email handling in production.
 
@@ -778,10 +778,10 @@ To enable email functionality in your Django application using Gmail's SMTP serv
 - If you don't have a Gmail account, you can create one by visiting [Gmail](https://mail.google.com/).
 
 #### 2. Allow Less Secure Apps (For Development Purposes)
-- Gmail requires allowing access to less secure apps to enable your application to send emails. This step is necessary only for development purposes. However, for a more secure approach (especially when your app is in production), you should use OAuth 2.0.
+- Gmail requires allowing access to less secure apps to enable your application to send emails.
 - To enable less secure apps:
   - Visit [Allow less secure apps](https://myaccount.google.com/lesssecureapps) and toggle it **ON**.
-- If you have **Two-Factor Authentication (2FA)** enabled, you should use an **App Password** instead of your regular Gmail password. You can generate this from your Google account settings.
+- If you have **Two-Factor Authentication (2FA)** enabled, you should use an **App Password** instead of your regular Gmail password. You can generate this from your Google account settings. More information regarding app passwords can be found [here](https://support.google.com/mail/answer/185833?hl=en).
 
 #### 3. Gmail SMTP configuration in `settings.py`
 settings.py is configured to take the variables defined in `env.py` for email host, password, and port.
