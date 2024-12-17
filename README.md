@@ -166,7 +166,7 @@ Here a superuser can create new products, with Cloudinary image field submission
 
 #### Blog
 
-Clicking the 'blog' button in the navbar directs the user to a list of published blog posts. Some blog post details (25 word summary, post date, title, and author) are provided as well as a featured image for illustative purposes
+Clicking the 'blog' button in the navbar directs the user to a list of published blog posts. Some blog post details (date posted, title, and author) are provided as well as a featured image for illustative purposes
 
 ![Blog List Screenshot](/documentation/screencaps/blog_list.png)
 
