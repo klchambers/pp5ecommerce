@@ -648,7 +648,12 @@ To contribute, make a pull request from the [project repository](https://github.
 
 ### Further Development and Future Features
 
+GlouGlou could be enhanced through the development and implementation of the following features:
 
+* User comments on Blog Posts
+* User ratings on purchased wines
+* Stock management for admins and site staff
+* Personalised recommendations based on past orders and ratings
 
 <a id=deployment></a>
 
